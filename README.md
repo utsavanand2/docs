@@ -2,10 +2,27 @@
 
 This documentation site covers all the inlets projects and uses [docsify](https://docsify.js.org/#/)
 
-Inlets is a cloud native tunnel.
+## Usage
 
-* inlets - OSS L7 tunnel
-* inlets-pro - commercial TCP L4 tunnel
+* [Install Node.js](https://nodejs.org/en/)
 
-* inletsctl - create exit-servers for inlets/-pro
-* inlets-operator - Kubernetes automation to create exit-servers for inlets/-pro
+* Install docsify:
+
+```sh
+npm i -g docsify
+```
+
+* Serve the content
+
+```
+docsify serve ./docs
+```
+
+Open http://127.0.0.1:3000 to view the site
+
+## Contributing
+
+See the [contribution guide](https://github.com/inlets/inlets/blob/master/CONTRIBUTING.md)
+
+All commits must be signed-off with the CLI using `git commit --sign-off`
+
