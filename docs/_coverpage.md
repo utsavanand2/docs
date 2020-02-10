@@ -3,7 +3,7 @@
 > Cloud Native Tunnel written in Go.
 
 [GitHub](https://github.com/inlets/)
-[Getting Started](#inlets)
+[Getting Started](#cloud-native-tunnel)
 
 <!-- background color -->
 ![color](#f0f0f0)
