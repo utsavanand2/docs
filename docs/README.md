@@ -47,13 +47,15 @@ There are two community projects which automate creating exit-servers for inlets
 
 * [Quick-start: expose a HTTP server with a public IP](/get-started/quickstart-http?id=expose-a-http-server-with-a-public-ip)
 
-* [Quick-start: expose Your IngressController and get TLS from LetsEncrypt](/get-started/quickstart-k8s?id=expose-nginx-from-your-kubernetes-cluster-with-kind)
-
-* [Quick-start: expose a Kubernetes Pod with KinD](/get-started/quickstart-k8s?id=expose-nginx-from-your-kubernetes-cluster-with-kind)
-
 * [Quick-start: get SSH access from anywhere](/get-started/quickstart-tcp-ssh?id=get-ssh-access-from-anywhere)
 
 * [Video: Get public endpoints in seconds with inlets and create-react-app](https://www.youtube.com/watch?v=jrAqqe8N3q4&feature=youtu.be)
+
+Kubernetes:
+
+* [Quick-start: expose Your IngressController and get TLS from LetsEncrypt](/get-started/quickstart-ingresscontroller-cert-manager?id=expose-your-ingresscontroller-and-get-tls-from-letsencrypt)
+
+* [Quick-start: expose a Kubernetes Pod with KinD](/get-started/quickstart-k8s?id=expose-nginx-from-your-kubernetes-cluster-with-kind)
 
 ## Connect with the community
 
