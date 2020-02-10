@@ -16,7 +16,7 @@ You need to know the IP of the machine you want to SSH onto, in my case this was
 
 On each of the computers you work with in this tutorial, you can use `inletsctl` to download `inlets-pro`.
 
-```sh
+```bash
 curl -sLSf https://inletsctl.inlets.dev | sudo sh
 sudo inlets-pro --download
 ```
@@ -33,7 +33,7 @@ This should then create an exit node, which will forward all TCP traffic to thro
 
 After the machine has been created, inletsctl will output the following:
 
-```sh 
+```bash 
 export TCP_PORTS="8000"
 export LICENSE=""
 inlets-pro client --connect "wss://206.189.114.179:8123/connect" \
@@ -48,7 +48,7 @@ Use B) if you want to provision your virtual machine manually, or if you already
 
 Log in with ssh and obtain the binary:
 
-```sh
+```bash
 curl -SLsf https://github.com/inlets/inlets-pro/releases/download/0.5.1/inlets-pro > inlets-pro
 chmod +x ./inlets-pro
 mv ./inlets-pro /usr/bin/inlets-pro
@@ -64,7 +64,7 @@ Confirm the IP with `echo $IP` and save it, you need it for the client
 
 Get an auth token and save it for later to use with the client
 
-```sh
+```bash
 export TOKEN="$(head -c 16 /dev/urandom |shasum|cut -d'-' -f1)"
 
 echo $TOKEN
@@ -72,7 +72,7 @@ echo $TOKEN
 
 Start the server:
 
-```sh
+```bash
 export PROXY_TO_HERE="localhost"
 
 sudo inlets-pro server \
@@ -116,7 +116,7 @@ sudo systemctl reload sshd
 
 First download the inlets-pro client onto the machine running ssh
 
-```sh
+```bash
 curl -SLsf https://github.com/inlets/inlets-pro/releases/download/0.5.1/inlets-pro > inlets-pro
 chmod +x ./inlets-pro
 mv ./inlets-pro /usr/bin/inlets-pro
@@ -124,7 +124,7 @@ mv ./inlets-pro /usr/bin/inlets-pro
 
 Use the command from earlier to start the client on the server:
 
-```sh 
+```bash 
   export TCP_PORTS="2222"
   export LICENSE="LICENSE_KEY"
   inlets-pro client --connect "wss://206.189.114.179:8123/connect" \
@@ -137,7 +137,7 @@ Use the command from earlier to start the client on the server:
 
 Verify the installation by trying to SSH to the public IP, using port `2222`. You can run this from anywhere, using your phone or iPad could provide a good test.
 
-```sh 
+```bash 
 ssh -p 2222 user@206.189.114.179
 ```
 
