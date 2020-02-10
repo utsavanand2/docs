@@ -41,6 +41,57 @@ There are two community projects which automate creating exit-servers for inlets
 * [inletsctl](https://github.com/inlets/inletsctl)  - create exit-servers for inlets/-pro
 * [inlets-operator](https://github.com/inlets/inlets-operator) - Kubernetes automation to create exit-servers for inlets/-pro including a CRD
 
+## Get started
+
+The easiest way to start is with `inletsctl`:
+
+```bash
+# Remove `sudo to install to the local folder
+curl -sLSf https://raw.githubusercontent.com/inlets/inletsctl/master/get.sh | sudo sh
+
+sudo inletsctl download [--pro]
+```
+
+Start a Python HTTP fileserver (on port 8000)
+
+```sh
+export STORE=/tmp/store/
+
+mkdir -p $STORE
+cd $STORE
+echo "Hi" > hello-inlets.txt
+python -m SimpleHTTPServer 8000
+```
+
+Now create an exit-server using inletsctl to automate the creation of the public host and the installation of the inlets server component:
+
+```sh
+inletsctl create --provider digitalocean \
+  --region lon1 \
+  --access-token-file ~/digitalocean-api
+```
+
+Run the command given for `inlets client` to connect to the server.
+
+```sh
+export UPSTREAM=http://127.0.0.1:8000
+inlets client --remote "ws://142.93.33.12:8080" \
+  --token "GhdoqT9NfZWbSlW0jHEQHcBPpC9Krv9xPxURdGrM9R3yXOwl7o6H2Pam3TnkMGNx" \
+  --upstream $UPSTREAM
+```
+
+You can now access the Python HTTP server by going to the IP address given, i.e. `http://142.93.33.12`.
+
+![Python example server](images/python-example-server.png)
+
+Finally feel free to run `inletsctl delete` with the command given to you.
+
+```sh
+inletsctl delete --provider digitalocean --id "179755668"
+```
+
+Finally, if you would like to add TLS you can do [this manually using my tutorial](https://blog.alexellis.io/https-inlets-local-endpoints/), or use [inlets-pro](https://github.com/inlets/inlets-pro) to expose Caddy, Traefik or a Kubernetes IngressController and obtain a certificate for your computer.
+
 ## Connect with the community
 
 Follow [@inletsdev](https://twitter.com/inletsdev) on Twitter.
