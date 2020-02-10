@@ -148,7 +148,7 @@ spec:
 
 Edit `email`, then run: `kubectl apply -f issuer.yaml`.
 
-Let's use helm3 to install Alex's example Node.js API:
+Let's use helm3 to install Alex's example Node.js API [available on GitHub](https://github.com/alexellis/expressjs-k8s)
 
 Create `custom.yaml`:
 
