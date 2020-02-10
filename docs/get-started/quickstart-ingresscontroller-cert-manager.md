@@ -108,12 +108,15 @@ k3sup app install cert-manager
 Here's what we have so far:
 
 * nginx-ingress
+
     An IngressController, Traefik or Caddy are also valid options. It comes with a Service of type LoadBalancer that will get a public address via the tunnel
 
 * inlets-operator configured to use inlets-pro
+
     Provides us with a public VirtualIP for the IngressController service.
 
 * cert-manager
+
     Provides TLS certificates through the HTTP01 or DNS01 challenges from LetsEncrypt
 
 ## Deploy an application and get a TLS certificate
