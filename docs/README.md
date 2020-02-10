@@ -32,7 +32,7 @@ For companies:
 
 * When integrating APIs with data-feeds from third-parties
 * For command and control of: services within private VPCs, IoT devices, Point of Sale (PoS) and servers on remote sites or on-premises
-* As an alternative to an expensive data-center uplink such as AWS Direct Connect or Azure Express Route.
+* As an alternative to an expensive data-center uplink such as [AWS Direct Connect](https://aws.amazon.com/directconnect/) or [Azure Express Route](https://docs.microsoft.com/en-us/azure/expressroute/expressroute-introduction).
 
 ## Exit-servers
 
@@ -45,11 +45,11 @@ There are two community projects which automate creating exit-servers for inlets
 
 ## Get started
 
-[Quick-start: expose a HTTP server with a public IP](/get-started/quickstart-http?id=expose-a-http-server-with-a-public-ip)
+* [Quick-start: expose a HTTP server with a public IP](/get-started/quickstart-http?id=expose-a-http-server-with-a-public-ip)
 
-[Quick-start: expose Nginx from your Kubernetes cluster with KinD](/get-started/quickstart-k8s?id=expose-nginx-from-your-kubernetes-cluster-with-kind)
+* [Quick-start: expose Nginx from your Kubernetes cluster with KinD](/get-started/quickstart-k8s?id=expose-nginx-from-your-kubernetes-cluster-with-kind)
 
-[Quick-start: get ssh access from anywhere](/get-started/quickstart-tcp-ssh?id=get-ssh-access-from-anywhere)
+* [Quick-start: get SSH access from anywhere](/get-started/quickstart-tcp-ssh?id=get-ssh-access-from-anywhere)
 
 ## Connect with the community
 
