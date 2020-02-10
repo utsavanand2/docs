@@ -59,8 +59,12 @@ inletsctl delete --provider digitalocean --id "179755668"
 
 In this tutorial we automated the cloud host using inletsctl, it provisioned a server using an API token from DigitalOcean and then we started the tunnel manually.
 
-If you would like to add TLS encryption to the tunnel then you can do this manually using a tutorial by Alex Ellis:
+![Webhooks example](../images/webhooks.png)
 
-[HTTPS for your local endpoints with inlets and Caddy](https://blog.alexellis.io/https-inlets-local-endpoints/)
+There are many reasons that you may want to get incoming Internet access to your services either for development, or for production use. Above is an example of a webhook receiver, where the public IP is shared with GitHub. For this example, if your local HTTP port was `3000`, you would simply alter the `--upstream` flag from `8000` to `3000`.
 
-The easier alernative is to use [inlets-pro](https://github.com/inlets/inlets-pro) which has built-in TLS and can allow your computer to obtain a TLS certificate using a reverse proxy like Caddy, Nginx (with cert-bot) or Traefik.
+If you would like to add TLS encryption to the tunnel then you can do this manually using a tutorial by Alex Ellis. You can either log into the cloud host using `ssh` and configure it, or use an alternative approach.
+
+Add TLS manually: [HTTPS for your local endpoints with inlets and Caddy](https://blog.alexellis.io/https-inlets-local-endpoints/)
+
+The easier alternative is to use [inlets-pro](https://github.com/inlets/inlets-pro) which has built-in TLS and can allow your computer to obtain a TLS certificate using a reverse proxy like Caddy, Nginx (with cert-bot) or Traefik.
