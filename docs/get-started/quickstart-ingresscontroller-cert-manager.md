@@ -195,12 +195,16 @@ Open the webpage i.e. https://api.example.com
 
 Here's my example on my own domain:
 
-![](../images/operator-pro-webpage.png)
+![The page with TLS](../images/operator-pro-webpage.png)
 
 You can view the certificate the certificate that's being served directly from your local cluster and see that it's valid:
 
-![](../images/operator-pro-webpage-letsencrypt.png)
+![Green lock](../images/operator-pro-webpage-letsencrypt.png)
 
 ## Wrapping up
 
 Through the use of inlets-pro we have an encrypted control-plane for the websocket tunnel, and encryption for the traffic going to our Express.js app using a TLS certificate from LetsEncrypt.
+
+You can now get a green lock and a valid TLS certificate for your local cluster, which also means that this will work with bare-metal Kubernetes, on-premises and with your Raspberry Pi cluster.
+
+> Note if you're just looking for something to use in development, without TLS or encryption, you can install the inlets-operator without the `--license` flag and port 80 will be exposed for you instead. You can still use NginxIngress, but you won't get a certificate and it won't be encrypted e2e.
