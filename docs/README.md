@@ -45,9 +45,9 @@ There are two community projects which automate creating exit-servers for inlets
 
 ## Get started
 
-[Quick-start: expose a HTTP server with a public IP](/get-started/quickstart-http)
+[Quick-start: expose a HTTP server with a public IP](/get-started/quickstart-http?id=expose-a-http-server-with-a-public-ip)
 
-[Quick-start: expose Nginx from your Kubernetes cluster with KinD](/get-started/quickstart-k8s)
+[Quick-start: expose Nginx from your Kubernetes cluster with KinD](/get-started/quickstart-k8s?id=expose-nginx-from-your-kubernetes-cluster-with-kind)
 
 ## Connect with the community
 

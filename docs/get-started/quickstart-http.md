@@ -1,6 +1,8 @@
-## Expose a HTTP server with a public IP
+# Expose a HTTP server with a public IP
 
 The easiest way to get started is with `inletsctl` which will create a public host for us on DigitalOcean and then configure the inlets-server automatically.
+
+## Get inletsctl and `inlets`
 
 ```bash
 # Remove `sudo to install to the local folder
@@ -9,7 +11,9 @@ curl -sLSf https://raw.githubusercontent.com/inlets/inletsctl/master/get.sh | su
 sudo inletsctl download [--pro]
 ```
 
-Start a Python HTTP fileserver (on port 8000)
+## Start a Python HTTP fileserver
+
+The default port is 8000. Careful where you run this command because it will serve the current working folder to the Internet.
 
 ```bash
 export STORE=/tmp/store/
@@ -19,6 +23,8 @@ cd $STORE
 echo "Hi" > hello-inlets.txt
 python -m SimpleHTTPServer 8000
 ```
+
+## Create the exit-server on DigitalOcean
 
 Now create an exit-server using inletsctl to automate the creation of the public host and the installation of the inlets server component:
 
@@ -37,6 +43,8 @@ inlets client --remote "ws://142.93.33.12:8080" \
   --upstream $UPSTREAM
 ```
 
+## Access your public service
+
 You can now access the Python HTTP server by going to the IP address given, i.e. `http://142.93.33.12`.
 
 ![Python example server](../images/python-example-server.png)
@@ -46,6 +54,8 @@ Finally feel free to run `inletsctl delete` with the command given to you.
 ```bash
 inletsctl delete --provider digitalocean --id "179755668"
 ```
+
+## Wrapping up
 
 In this tutorial we automated the cloud host using inletsctl, it provisioned a server using an API token from DigitalOcean and then we started the tunnel manually.
 
