@@ -1,4 +1,4 @@
-# inlets-operator
+# Expose Nginx from your Kubernetes cluster with KinD
 
 In this quick-start the inlets-operator for Kubernetes will enable us to get a public IP address for a LoadBalancer service in our private cluster.
 
@@ -17,7 +17,7 @@ You can use an alternative to KinD if you have a preferred tool.
 
 Get a KinD binary release:
 
-```sh
+```bash
 curl -Lo ./kind "https://github.com/kubernetes-sigs/kind/releases/download/v0.7.0/kind-$(uname)-amd64"
 chmod +x ./kind
 sudo mv /kind /usr/local/bin
@@ -25,7 +25,7 @@ sudo mv /kind /usr/local/bin
 
 Now create a cluster:
 
-```sh
+```bash
  kind create cluster
 Creating cluster "kind" ...
  ✓ Ensuring node image (kindest/node:v1.17.0) 🖼
@@ -44,7 +44,7 @@ Have a nice day! 👋
 
 We can check that our single node is ready now:
 
-```sh
+```bash
 kubectl get node -o wide
 
 NAME                 STATUS     ROLES    AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE       KERNEL-VERSION     CONTAINER-RUNTIME
@@ -57,14 +57,14 @@ The above shows one node Ready, so we are ready to move on.
 
 You can use k3sup or helm to install the inlets-operator:
 
-```sh
+```bash
 # Get k3sup
 curl -sSLf https://get.k3sup.dev/ | sudo sh
 ```
 
 Save an access token for your cloud provider as `$HOME/access-token`, in this example we're using DigitalOcean.
 
-```sh
+```bash
 k3sup app install inlets-operator \
  --provider digitalocean \
  --region lon1 \
@@ -79,19 +79,19 @@ Set the `--region` flag as required, it's best to have low latency between your 
 
 We'll create a test deployment of Nginx:
 
-```sh
+```bash
 kubectl run nginx-1 --image=nginx --port=80 --restart=Always
 ```
 
 Now create a service of type LoadBalancer:
 
-```sh
+```bash
 kubectl expose deployment nginx-1 --port=80 --type=LoadBalancer
 ```
 
 Now we see the familiar "Pending" status, but since we've installed the inlets-operator, a VM will be created on DigitalOcean and a tunnel will be established.
 
-```sh
+```bash
 kubectl get svc -w
 
 NAME         TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)        AGE
@@ -102,7 +102,7 @@ nginx-1      LoadBalancer   10.104.90.5   <pending>     80:32037/TCP   1s
 Access your local cluster service from the Internet
 Using the IP in "EXTERNAL-IP" you can now access Nginx:
 
-```sh
+```bash
 NAME         TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)        AGE
 kubernetes   ClusterIP      10.96.0.1     <none>        443/TCP        4m34s
 nginx-1      LoadBalancer   10.104.90.5   <pending>     80:32037/TCP   2m10s
@@ -121,7 +121,7 @@ The exit-nodes created by the inlets-operator on DigitalOcean cost around 5 USD 
 
 Now if you'd like to delete the tunnel and its exit-server, simply delete the Kubernetes service:
 
-```sh
+```bash
 kubectl delete svc/nginx-1
 ```
 
