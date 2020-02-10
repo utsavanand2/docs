@@ -6,8 +6,8 @@ inlets creates a tunnel between two networks using a websocket and optional TLS 
 
 There are two flavours of inlets tunnels depending on your needs:
 
-* [inlets](https://github.com/inlets/inlets) - L7 tunnel for HTTP/HTTPS, free and OSS
-* [inlets-pro](https://github.com/inlets/inlets-pro) - L4 tunnel for any TCP traffic including automatic encryption with TLS and commercial support
+* [inlets](https://github.com/inlets/inlets) - L7 tunnel for HTTP/HTTPS, free and OSS. MIT license
+* [inlets-pro](https://github.com/inlets/inlets-pro) - L4 tunnel for any TCP traffic including automatic encryption with TLS. Commercial license: support & enterprise solutions available
 
 In the diagram we can see a developer has exposed a Node.js website on his or her laptop through the use of inlets and a server that has a public IPv4 address.
 
@@ -48,6 +48,8 @@ There are two community projects which automate creating exit-servers for inlets
 [Quick-start: expose a HTTP server with a public IP](/get-started/quickstart-http?id=expose-a-http-server-with-a-public-ip)
 
 [Quick-start: expose Nginx from your Kubernetes cluster with KinD](/get-started/quickstart-k8s?id=expose-nginx-from-your-kubernetes-cluster-with-kind)
+
+[Quick-start: get ssh access from anywhere](/get-started/quickstart-tcp-ssh?id=get-ssh-access-from-anywhere)
 
 ## Connect with the community
 
