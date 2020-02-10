@@ -25,4 +25,3 @@ Open http://127.0.0.1:3000 to view the site
 See the [contribution guide](https://github.com/inlets/inlets/blob/master/CONTRIBUTING.md)
 
 All commits must be signed-off with the CLI using `git commit --sign-off`
-

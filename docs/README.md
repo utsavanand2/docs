@@ -58,3 +58,5 @@ There are two community projects which automate creating exit-servers for inlets
 Follow [@inletsdev](https://twitter.com/inletsdev) on Twitter.
 
 Join the `#inlets` channel on [OpenFaaS Slack](https://slack.openfaas.io/)
+
+> [Contribute to this documentation on GitHub](https://github.com/inlets/docs/)
