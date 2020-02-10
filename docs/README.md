@@ -51,6 +51,8 @@ There are two community projects which automate creating exit-servers for inlets
 
 * [Quick-start: get SSH access from anywhere](/get-started/quickstart-tcp-ssh?id=get-ssh-access-from-anywhere)
 
+* [Video: Get public endpoints in seconds with inlets and create-react-app](https://www.youtube.com/watch?v=jrAqqe8N3q4&feature=youtu.be)
+
 ## Connect with the community
 
 Follow [@inletsdev](https://twitter.com/inletsdev) on Twitter.
