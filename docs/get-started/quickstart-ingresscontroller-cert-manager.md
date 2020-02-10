@@ -2,6 +2,8 @@
 
 In this quick-start we will configure the inlets-operator to use inlets-pro (a TCP proxy) to expose NginxIngress so that it can receive HTTPS certificates via LetsEncrypt and cert-manager.
 
+> Note: If you don't have a license for inlets-pro, you can get [a 14-day free trial](https://docs.google.com/forms/d/e/1FAIpQLScfNQr1o_Ctu_6vbMoTJ0xwZKZ3Hszu9C-8GJGWw1Fnebzz-g/viewform), or just use the free OSS inlets option, your IngressController will be able to serve plaintext HTTP over port 80, but you won't be able to obtain a TLS certificate.
+
 ## Pre-reqs
 
 * A computer or laptop running MacOS or Linux, or Git Bash or WSL on Windows
@@ -82,9 +84,12 @@ k3sup app install inlets-operator \
 
 > You can run `k3sup app install inlets-operator --help` to see a list of other cloud providers.
 
-Set the `--region` flag as required, it's best to have low latency between your current location and where the exit-servers will be provisioned.
+* Set the `--region` flag as required, it's best to have low latency between your current location and where the exit-servers will be provisioned.
+* Use your license in `--license`, or omit this flag if you just want to serve port 80 from your IngressController without any TLS
 
 ## Install nginx-ingress
+
+This installs nginx-ingress using its Helm chart:
 
 ```bash
 k3sup app install nginx-ingress
@@ -150,7 +155,7 @@ Edit `email`, then run: `kubectl apply -f issuer.yaml`.
 
 Let's use helm3 to install Alex's example Node.js API [available on GitHub](https://github.com/alexellis/expressjs-k8s)
 
-Create `custom.yaml`:
+Create a set of helm overrides for the domain-name `custom.yaml`:
 
 ```yaml
 ingress:
@@ -167,7 +172,8 @@ ingress:
        - expressjs.inlets.dev
 ```
 
-Now install
+Now install the helm chart using the version of helm3 downloaded by k3sup:
+
 ```bash
 export PATH=$PATH:$HOME/.k3sup/bin/helm3/
 helm repo add expressjs-k8s https://alexellis.github.io/expressjs-k8s/
@@ -184,7 +190,7 @@ helm upgrade --install express expressjs-k8s/expressjs-k8s \
 
 Now check the certificate has been created and visit the webpage in a browser:
 
-```
+```bash
 kubectl get certificate
 
 NAME            READY   SECRET          AGE
