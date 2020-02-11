@@ -4,6 +4,10 @@ inlets, inlets-operator and inletsctl are all OSS and distributed under the MIT 
 
 Contact [sales@openfaas.com](mailto:sales@openfaas.com) for a quote on commercial support, training, and custom solutions for inlets or inlets-pro.
 
+<img src="../images/inlets-pro-purple.png" width="250px">
+
+Purchase a license for [inlets-pro](https://github.com/inlets/inlets-pro/)
+
 ## 14-day trial for unlimited use
 
 A 14-day, free, non-obligation trial is made available for unlimited use - whether business, commercial or enterprise. After completing the trial, you have several options.
