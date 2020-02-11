@@ -57,6 +57,16 @@ Kubernetes:
 
 * [Quick-start: expose a Kubernetes Pod with KinD](/get-started/quickstart-k8s?id=expose-nginx-from-your-kubernetes-cluster-with-kind)
 
+## Pricing
+
+inlets, inlets-operator and inletsctl are all OSS and distributed under the MIT license.
+
+**Buy an inlets t-shirt**: [buy a t-shirt on Gumroad](https://gumroad.com/openfaas)
+
+> Contact [sales@openfaas.com](mailto:sales@openfaas.com) for a quote on commercial support, training, and custom solutions for inlets or inlets-pro.
+
+**Buy now:** [inlets-pro](/pricing/)
+
 ## Connect with the community
 
 Follow [@inletsdev](https://twitter.com/inletsdev) on Twitter.

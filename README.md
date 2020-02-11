@@ -9,12 +9,12 @@ This documentation site covers all the inlets projects and uses [docsify](https:
 * Install docsify:
 
 ```bash
-npm i -g docsify
+npm i -g docsify-cli
 ```
 
 * Serve the content
 
-```
+```bash
 docsify serve ./docs
 ```
 
