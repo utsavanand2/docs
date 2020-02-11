@@ -36,6 +36,8 @@ Why do I need to purchase a fixed-term?
 
 inlets-pro is designed for automated use within a commercial-context, and as such does not include "call-home" functionality to a license server. The license is validated by JWT and must be purchased ahead of time, several durations are made available.
 
+> Note: the first 30 orders can use discount code `teamserverless-earlybird` for money off.
+
 * [Purchase inlets-pro for 3, 6 or 12 months on gumroad.com](https://gumroad.com/openfaas)
 
 ## Business and commercial
