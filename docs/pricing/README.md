@@ -70,8 +70,12 @@ inlets-pro is designed for automated use within a commercial-context, and as suc
 
 Pricing for business and commercial use includes unlimited use of inlets-pro for a set number of tunnels.
 
-Contact [sales@openfaas.com](mailto:sales@openfaas.com) for a quote along with the number of tunnels you require.
+Book a time for a free consultation with the team to see we can help you. Contact [sales@openfaas.com](mailto:sales@openfaas.com) along with the number of tunnels you require.
 
 ## Enterprise solutions
 
-Contact [sales@openfaas.com](mailto:sales@openfaas.com) for a quote for bulk-pricing.
+Do you need a custom solution?
+
+What about bulk-pricing or bespoke features?
+
+Book a time for a free consultation with the team to see we can help you. Contact [sales@openfaas.com](mailto:sales@openfaas.com) along with the number of tunnels you require.
