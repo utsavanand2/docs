@@ -8,6 +8,26 @@ Contact [sales@openfaas.com](mailto:sales@openfaas.com) for a quote on commercia
 
 Purchase a license for [inlets-pro](https://github.com/inlets/inlets-pro/)
 
+## Why PRO?
+
+Inlets PRO is a commercial-grade Cloud Native Tunnel which is secure by default through automatic TLS (encryption).
+
+* Tunnel through NAT and firewalls transparently
+* Work with any TCP traffic - including databases, TLS, SSH, Kubernetes IngressControllers and custom APIs
+* You can run in any region where you have access to a server, unlike SaaS products
+* You are in complete control of the tunnel at both ends
+* You can either expose a TCP service on the internet, or only to a remote local network 
+* We have spent weeks building deep integrations into Kubernetes
+* You're gaining months worth of work to integrate directly to different cloud vendors and IaaS platforms, if you should need it such as: EC2, Azure, Packet, Scaleway, DigitalOcean and Civo
+* Multi-arch support is built-in for Windows, Linux and MacOS whether on Intel or ARM
+* Convenient static binaries are supplied which require no other dependencies
+* Free systemd unit files and Kubernetes YAML files
+* Free access to dozens of tutorials and complementary OSS projects
+
+Non-commercial users can enjoy free community support, and commercial users can rest assured that they have someone to talk to if things are not going to plan.
+
+We also provide commercial support and can design a custom reference architecture for you whether using Kubernetes or not.
+
 ## 14-day trial for unlimited use
 
 A 14-day, free, non-obligation trial is made available for unlimited use - whether business, commercial or enterprise. After completing the trial, you have several options.
@@ -16,9 +36,9 @@ A 14-day, free, non-obligation trial is made available for unlimited use - wheth
 
 ## Personal use, non-commercial use
 
-A discounted license is made available for use with an unlimited amount of tunnels for personal use, which must be non-commercial.
+A discounted license is made available for use with an unlimited amount of tunnels for non-commercial, personal-use.
 
-Examples of personal, non-commercial use:
+Covered:
 
 * A tunnel for your blog
 * A tunnel for your Raspberry Pi cluster, or homelab
@@ -34,7 +54,7 @@ Not covered:
 * Integrated into a product
 * Shipped to a customer as part of a product or edge device
 
-If you are in doubt, please feel free to contact [sales@openfaas.com](mailto:sales@openfaas.com) before purchasing.
+> If you are in doubt, please feel free to contact [sales@openfaas.com](mailto:sales@openfaas.com) before purchasing.
 
 Why do I need to purchase a fixed-term?
 
