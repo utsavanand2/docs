@@ -18,7 +18,7 @@ Inlets PRO is a commercial-grade Cloud Native Tunnel which is secure by default 
 * You are in complete control of the tunnel at both ends
 * You can either expose a TCP service on the internet, or only to a remote local network 
 * We have spent weeks building deep integrations into Kubernetes
-* You're gaining months worth of work to integrate directly to different cloud vendors and IaaS platforms, if you should need it such as: EC2, Azure, Packet, Scaleway, DigitalOcean and Civo
+* You're gaining months worth of work to integrate directly to different cloud vendors and IaaS platforms, if you should need it such as: EC2, Azure, Packet, Scaleway, DigitalOcean and Civo.
 * Multi-arch support is built-in for Windows, Linux and MacOS whether on Intel or ARM
 * Convenient static binaries are supplied which require no other dependencies
 * Free systemd unit files and Kubernetes YAML files
@@ -30,9 +30,11 @@ We also provide commercial support and can design a custom reference architectur
 
 ## 14-day trial for unlimited use
 
-A 14-day, free, non-obligation trial is made available for unlimited use - whether business, commercial or enterprise. After completing the trial, you have several options.
+Find out if inlets-pro is for you with a free 14-day, no-obligation trial. In that time you can evaluate inlets-pro for unlimited use - whether business, commercial or enterprise.
 
 * [Apply for your trial](https://github.com/inlets/inlets-pro#getting-a-license-key)
+
+After completing the trial, you have several options for purchase.
 
 ## Personal use, non-commercial use
 
