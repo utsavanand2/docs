@@ -21,7 +21,7 @@ Inlets PRO is a commercial-grade Cloud Native Tunnel which is secure by default 
 * You're gaining months worth of work to integrate directly to different cloud vendors and IaaS platforms, if you should need it such as: EC2, Azure, Packet, Scaleway, DigitalOcean and Civo.
 * Multi-arch support is built-in for Windows, Linux and MacOS whether on Intel or ARM
 * Convenient static binaries are supplied which require no other dependencies
-* Free systemd unit files and Kubernetes YAML files
+* Free systemd unit files and Kubernetes YAML files and generation of config files
 * Free access to dozens of tutorials and complementary OSS projects
 
 Non-commercial users can enjoy free community support, and commercial users can rest assured that they have someone to talk to if things are not going to plan.
