@@ -43,6 +43,12 @@ There are two community projects which automate creating exit-servers for inlets
 * [inletsctl](https://github.com/inlets/inletsctl)  - create exit-servers for inlets/-pro
 * [inlets-operator](https://github.com/inlets/inlets-operator) - Kubernetes automation to create exit-servers for inlets/-pro including a CRD
 
+## Buy SWAG
+
+![T-shirt and hoodie](images/inlets-swag.jpg)
+
+**Buy an inlets t-shirt or hooodie**: [buy yours on Gumroad now](https://gumroad.com/openfaas)
+
 ## Get started
 
 * [Quick-start: expose a HTTP server with a public IP](/get-started/quickstart-http?id=expose-a-http-server-with-a-public-ip)
@@ -61,7 +67,7 @@ Kubernetes:
 
 inlets, inlets-operator and inletsctl are all OSS and distributed under the MIT license.
 
-**Buy an inlets t-shirt**: [buy a t-shirt on Gumroad](https://gumroad.com/openfaas)
+**Buy an inlets t-shirt or hooodie**: [buy yours on Gumroad now](https://gumroad.com/openfaas)
 
 > Contact [sales@openfaas.com](mailto:sales@openfaas.com) for a quote on commercial support, training, and custom solutions for inlets or inlets-pro.
 
