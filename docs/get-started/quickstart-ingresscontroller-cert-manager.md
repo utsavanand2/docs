@@ -210,6 +210,50 @@ You can view the certificate the certificate that's being served directly from y
 
 ![Green lock](../images/operator-pro-webpage-letsencrypt.png)
 
+## Try something else
+
+Using k3sup you can now install OpenFaaS or a Docker Registry with a couple of commands, and since you have Nginx and cert-manager in place, this will only take a few moments.
+
+### OpenFaaS with TLS
+
+OpenFaaS is a platform for Kubernetes that provides FaaS functionality and microservices. The motto of the project is [Serverless Functions Made Simple](https://www.openfaas.com/) and you can deploy it along with TLS in just a couple of commands:
+
+```bash
+export DOMAIN=gateway.example.com
+k3sup app install openfaas
+k3sup app install openfaas-ingress \
+  --email webmaster@$DOMAIN \
+  --domain $DOMAIN
+```
+
+That's it, you'll now be able to access your gateway at https://$DOMAIN/
+
+For more, see the [OpenFaaS workshop](https://github.com/openfaas/workshop/)
+
+### Docker Registry with TLS
+
+A self-hosted Docker Registry with TLS and private authentication can be hard to set up, but we can now do that with two commands.
+
+```bash
+export DOMAIN=registry.example.com
+k3sup app install docker-registry
+k3sup app install docker-registry-ingress \
+  --email webmaster@$DOMAIN \
+  --domain $DOMAIN
+```
+
+Now try your registry:
+
+```bash
+docker login $DOMAIN
+docker pull alpine:3.11
+docker tag alpine:3.11 $DOMAIN/alpine:3.11
+
+docker push $DOMAIN/alpine:3.11
+```
+
+You can even combine the new private registry with OpenFaaS if you like, [checkout the docs for more](https://docs.openfaas.com/).
+
 ## Wrapping up
 
 Through the use of inlets-pro we have an encrypted control-plane for the websocket tunnel, and encryption for the traffic going to our Express.js app using a TLS certificate from LetsEncrypt.
