@@ -47,7 +47,7 @@ There are two community projects which automate creating exit-servers for inlets
 
 ![T-shirt and hoodie](images/inlets-swag.jpg)
 
-**Buy an inlets t-shirt or hooodie**: [buy yours on Gumroad now](https://gumroad.com/openfaas)
+**Buy your own [inlets t-shirt, hoodie or mug](https://store.openfaas.com/)**
 
 ## Get started
 
@@ -67,7 +67,7 @@ Kubernetes:
 
 inlets, inlets-operator and inletsctl are all OSS and distributed under the MIT license.
 
-**Buy an inlets t-shirt or hooodie**: [buy yours on Gumroad now](https://gumroad.com/openfaas)
+**Buy your own [inlets t-shirt, hoodie or mug](https://store.openfaas.com/)**
 
 > Contact [sales@openfaas.com](mailto:sales@openfaas.com) for a quote on commercial support, training, and custom solutions for inlets or inlets-pro.
 

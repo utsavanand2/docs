@@ -64,7 +64,7 @@ inlets-pro is designed for automated use within a commercial-context, and as suc
 
 > Note: the first 30 orders can use discount code `teamserverless-earlybird` for money off.
 
-* [Purchase inlets-pro for 3, 6 or 12 months on gumroad.com](https://gumroad.com/openfaas)
+* [Purchase inlets-pro for 6 or 12 months from the OpenFaaS Ltd store](https://store.openfaas.com)
 
 ## Business and commercial
 
