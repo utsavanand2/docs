@@ -38,12 +38,19 @@ For companies:
 
 Exit-servers run the inlets server component (the control-plane) on a given port and accept incoming requests from the inlets client. You can create these manually and customise them, or automate them through tooling such as [Terraform](https://www.terraform.io) or bash.
 
-There are two community projects which automate creating exit-servers for inlets/-pro using public cloud such as DigitalOcean, Packet, Scaleway, Civo, AWS and GCP.
+You can create your own exit-server, or use an existing computer and run `inlets-pro server` or `inlets server` there.
+
+* [inlets-pro](https://github.com/inlets/inlets-pro)
+* [inlets-pro](https://github.com/inlets/inlets)
+
+There are two community projects which automate the creation and configuration of your exit-servers. Both inlets and -pro as supported on: DigitalOcean, Packet, Scaleway, Civo, AWS, Azure and GCP.
 
 * [inletsctl](https://github.com/inlets/inletsctl)  - create exit-servers for inlets/-pro
 * [inlets-operator](https://github.com/inlets/inlets-operator) - Kubernetes automation to create exit-servers for inlets/-pro including a CRD
 
 ## Buy SWAG
+
+If you are using the project and want to support the community, then buy some SWAG to say thanks for our work.
 
 ![T-shirt and hoodie](images/inlets-swag.jpg)
 
