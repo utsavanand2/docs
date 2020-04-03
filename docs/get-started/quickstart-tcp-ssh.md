@@ -49,7 +49,7 @@ Use B) if you want to provision your virtual machine manually, or if you already
 Log in with ssh and obtain the binary:
 
 ```bash
-curl -SLsf https://github.com/inlets/inlets-pro/releases/download/0.5.1/inlets-pro > inlets-pro
+curl -SLsf https://github.com/inlets/inlets-pro/releases/download/0.6.0/inlets-pro > inlets-pro
 chmod +x ./inlets-pro
 mv ./inlets-pro /usr/bin/inlets-pro
 ```
@@ -117,7 +117,7 @@ sudo systemctl reload sshd
 First download the inlets-pro client onto the machine running ssh
 
 ```bash
-curl -SLsf https://github.com/inlets/inlets-pro/releases/download/0.5.1/inlets-pro > inlets-pro
+curl -SLsf https://github.com/inlets/inlets-pro/releases/download/0.6.0/inlets-pro > inlets-pro
 chmod +x ./inlets-pro
 mv ./inlets-pro /usr/bin/inlets-pro
 ```
