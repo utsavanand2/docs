@@ -84,9 +84,9 @@ sudo inlets-pro server \
 
 If running the inlets client on the same host as SSH, you can simply set `PROXY_TO_HERE` to `localhost`. Or if you are running SSH on a different computer to the inlets client, then you can specify a DNS entry or an IP address like `192.168.0.15`.
 
-### Configure the ssh agent
+### Configure the local ssh agent
 
-The exit-server is already using port 22 for SSH access. This means you need to configure the machine to listen for ssh connections on another port, let's use 2222 which is a standard alternative:
+The exit-server is already using port 22 for SSH access. This means you need to configure the local machine to listen for ssh connections on another port, let's use 2222 which is a standard alternative:
 
 If you find the line in  `/etc/ssh/sshd_config` near the top that is `Port 22`, make sure it's un-commented and add `Port 2222`.
 
