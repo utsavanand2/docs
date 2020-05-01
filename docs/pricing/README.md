@@ -6,7 +6,7 @@ Contact [sales@openfaas.com](mailto:sales@openfaas.com) for a quote on commercia
 
 <img src="../images/inlets-pro-purple.png" width="250px">
 
-Purchase a license for [inlets-pro](https://github.com/inlets/inlets-pro/)
+[Purchase inlets-pro for 6 or 12 months](https://store.openfaas.com/collections/software-licenses)
 
 ## Why PRO?
 
@@ -62,9 +62,7 @@ Why do I need to purchase a fixed-term?
 
 inlets-pro is designed for automated use within a commercial-context, and as such does not include "call-home" functionality to a license server. The license is validated by JWT and must be purchased ahead of time, several durations are made available.
 
-> Note: the first 30 orders can use discount code `teamserverless-earlybird` for money off.
-
-* [Purchase inlets-pro for 6 or 12 months from the OpenFaaS Ltd store](https://store.openfaas.com)
+* [Purchase inlets-pro for 6 or 12 months](https://store.openfaas.com/collections/software-licenses)
 
 ## Business and commercial
 
@@ -76,6 +74,6 @@ Book a time for a free consultation with the team to see we can help you. Contac
 
 Do you need a custom solution?
 
-What about bulk-pricing or bespoke features?
+What about bulk-pricing or bespoke features such as OIDC/OAuth2 and your own custom control-plane?
 
 Book a time for a free consultation with the team to see we can help you. Contact [sales@openfaas.com](mailto:sales@openfaas.com) along with the number of tunnels you require.

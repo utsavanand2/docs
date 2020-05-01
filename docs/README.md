@@ -48,14 +48,6 @@ There are two community projects which automate the creation and configuration o
 * [inletsctl](https://github.com/inlets/inletsctl)  - create exit-servers for inlets/-pro
 * [inlets-operator](https://github.com/inlets/inlets-operator) - Kubernetes automation to create exit-servers for inlets/-pro including a CRD
 
-## Buy SWAG
-
-If you are using the project and want to support the community, then buy some SWAG to say thanks for our work.
-
-![T-shirt and hoodie](images/inlets-swag.jpg)
-
-**Buy your own [inlets t-shirt, hoodie or mug](https://store.openfaas.com/)**
-
 ## Get started
 
 * [Quick-start: expose a HTTP server with a public IP](/get-started/quickstart-http?id=expose-a-http-server-with-a-public-ip)
@@ -72,13 +64,15 @@ Kubernetes:
 
 ## Pricing
 
+Buy an inlets PRO license for personal or commercial use:
+
+* [inlets PRO features and pricing](/pricing/?id=pricing)
+
+### Professional services and support
+
 inlets, inlets-operator and inletsctl are all OSS and distributed under the MIT license.
 
-**Buy your own [inlets t-shirt, hoodie or mug](https://store.openfaas.com/)**
-
-> Contact [sales@openfaas.com](mailto:sales@openfaas.com) for a quote on commercial support, training, and custom solutions for inlets or inlets-pro.
-
-**Buy now:** [inlets-pro](/pricing/)
+Contact [sales@openfaas.com](mailto:sales@openfaas.com) for a quote on commercial support, training, and custom solutions for inlets or inlets PRO.
 
 ## Connect with the community
 
@@ -87,3 +81,11 @@ Follow [@inletsdev](https://twitter.com/inletsdev) on Twitter.
 Join the `#inlets` channel on [OpenFaaS Slack](https://slack.openfaas.io/)
 
 > [Contribute to this documentation on GitHub](https://github.com/inlets/docs/)
+
+### Buy SWAG
+
+If you are using the project and want to support the community, then buy some SWAG to say thanks for our work.
+
+![T-shirt and hoodie](images/inlets-swag.jpg)
+
+**Buy your own [inlets t-shirt, hoodie or mug](https://store.openfaas.com/)**
