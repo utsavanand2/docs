@@ -1,6 +1,6 @@
 ![logo](images/inlets-logo.svg ':size=300%')
 
-> Cloud Native Tunnel written in Go.
+> Cloud Native Tunnel for professionals.
 
 [GitHub](https://github.com/inlets/)
 [Getting Started](#cloud-native-tunnel)
