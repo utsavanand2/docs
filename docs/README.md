@@ -1,27 +1,31 @@
 # Cloud Native Tunnel
 
-Inlets is a Cloud Native Tunnel written in Go, you can use it to connect services to other networks like the Internet through NAT, firewall and restrictive networks.
+inlets is a Cloud Native Tunnel used to connect HTTP and TCP services between networks securely. Through an encrypted websocket, inlets can penetrate firewalls, NAT, captive portals, and other restrictive networks lowering the barrier to entry.
 
-inlets creates a tunnel between two networks using a websocket and optional TLS for encryption. The main use-case for inlets is to expose a private API or service on the Internet, or to gain incoming network access (ingress) to a private network.
+VPNs traditionally require up-front configuration like subnet assignment and ports to be opened in firewalls. A tunnel with inlets can provide an easy-to-use, low-maintenance alternative to VPNs and other site-to-site networking solutions. 
+
+You can run inlets as a stand-alone binary, in Docker, integrated into Kubernetes for Ingress, or with cloud APIs. All services can be kept private in the target network, or exposed publicly.
 
 ## Use-cases
 
-There are many uses for inlets, some users consume it as a networking tool and others built it into their own projects and products.
+You can use inlets as a stand-alone networking tool, or integrate it into a platform to extend functionality for your users.
+
+For companies:
+
+* Low-maintenance, secure, and quick alternative to a VPN
+* Provide APIs endpoints to consume data from third-parties and partners
+* For command and control of: services within private VPCs, IoT devices and Point of Sale (PoS)
+* Create a hybrid cloud between existing servers and public cloud for: CI, e2e testing, or for accessing legacy systems
+* As an alternative to an expensive data-center uplink such as [AWS Direct Connect](https://aws.amazon.com/directconnect/) or [Azure Express Route](https://docs.microsoft.com/en-us/azure/expressroute/expressroute-introduction).
 
 For teams and individuals:
 
-* As a zero-touch VPN, which can traverse NAT and firewalls
+* As a zero-touch VPN - penetrating NAT, firewalls, captive portals and hotel WiFi
 * When integrating with API that use webhooks such as Stripe, PayPal or GitHub, you can test live with your local machine
 * To get a public IP address for your IngressController or services on a Kubernetes cluster
 * To access your homelab or Raspberry Pi cluster using SSH
 * As a freelancer, you can share a blog or website with a client or with your team
 * As an alternative to SaaS and or proprietary offerings such as [Ngrok](https://ngrok.io) and [Argo Tunnel](https://www.cloudflare.com/en-gb/products/argo-tunnel/)
-
-For companies:
-
-* When integrating APIs with data-feeds from third-parties
-* For command and control of: services within private VPCs, IoT devices, Point of Sale (PoS) and servers on remote sites or on-premises
-* As an alternative to an expensive data-center uplink such as [AWS Direct Connect](https://aws.amazon.com/directconnect/) or [Azure Express Route](https://docs.microsoft.com/en-us/azure/expressroute/expressroute-introduction).
 
 ## Concept
 
@@ -58,19 +62,31 @@ There are two community projects which automate the creation and configuration o
 
 * [Video: Get public endpoints in seconds with inlets and create-react-app](https://www.youtube.com/watch?v=jrAqqe8N3q4&feature=youtu.be)
 
+* [inlets PRO CLI reference](https://github.com/inlets/inlets-pro/blob/master/docs/cli-reference.md)
+
+* [Tunnel PostgreSQL or MariaDB with TLS](https://gist.github.com/alexellis/995b518a653d172dda4b0901dcdaa391)
+
+* [Expose your private Grafana dashboards with TLS](https://blog.alexellis.io/expose-grafana-dashboards/)
+
 Kubernetes:
 
 * [Quick-start: expose Your IngressController and get TLS from LetsEncrypt](/get-started/quickstart-ingresscontroller-cert-manager?id=expose-your-ingresscontroller-and-get-tls-from-letsencrypt)
 
+* [Get kubectl access to your private cluster from anywhere](https://blog.alexellis.io/get-private-kubectl-access-anywhere/)
+
 * [Quick-start: expose a Kubernetes Pod with KinD](/get-started/quickstart-k8s?id=expose-nginx-from-your-kubernetes-cluster-with-kind)
+
+* [Get a private Docker registry with auth and TLS](https://blog.alexellis.io/get-a-tls-enabled-docker-registry-in-5-minutes/)
 
 ## Pricing
 
+### inlets PRO
+
 Buy an inlets PRO license for personal or commercial use:
 
-* [inlets PRO features and pricing](/pricing/?id=pricing)
+[inlets PRO features and pricing](/pricing/?id=pricing)
 
-### Professional services and support
+### Professional services
 
 inlets, inlets-operator and inletsctl are all OSS and distributed under the MIT license.
 
@@ -82,7 +98,7 @@ Follow [@inletsdev](https://twitter.com/inletsdev) on Twitter.
 
 Join the `#inlets` channel on [OpenFaaS Slack](https://slack.openfaas.io/)
 
-> [Contribute to this documentation on GitHub](https://github.com/inlets/docs/)
+[Contribute to this documentation on GitHub](https://github.com/inlets/docs/)
 
 ### Buy SWAG
 
@@ -91,3 +107,9 @@ If you are using the project and want to support the community, then buy some SW
 ![T-shirt and hoodie](images/inlets-swag.jpg)
 
 **Buy your own [inlets t-shirt, hoodie or mug](https://store.openfaas.com/)**
+
+### Featured on
+
+inlets is proud to be featured on the Cloud Native Landscape in the Service Proxy category.
+
+<p><a href="https://landscape.cncf.io"><img width="200px" src="/images/cncf-landscape-left-logo.svg" alt="Cloud Native Landscape"></a></p>

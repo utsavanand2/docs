@@ -13,20 +13,20 @@ Contact [sales@openfaas.com](mailto:sales@openfaas.com) for a quote on commercia
 Inlets PRO is a commercial-grade Cloud Native Tunnel which is secure by default through automatic TLS (encryption).
 
 * Tunnel through NAT and firewalls transparently
-* Work with any TCP traffic - including databases, TLS, SSH, Kubernetes IngressControllers and custom APIs
+* Automatic link-level encryption for any TCP protocol
+* You can either expose a TCP service on the internet, or only to a remote local network 
+* Work with any HTTP or TCP traffic - including databases, TLS, SSH, Kubernetes IngressControllers and custom APIs
 * You can run in any region where you have access to a server, unlike SaaS products
 * You are in complete control of the tunnel at both ends
-* You can either expose a TCP service on the internet, or only to a remote local network 
 * We have spent weeks building deep integrations into Kubernetes
-* You're gaining months worth of work to integrate directly to different cloud vendors and IaaS platforms, if you should need it such as: EC2, Azure, Packet, Scaleway, DigitalOcean and Civo.
 * Multi-arch support is built-in for Windows, Linux and MacOS whether on Intel or ARM
 * Convenient static binaries are supplied which require no other dependencies
 * Free systemd unit files and Kubernetes YAML files and generation of config files
 * Free access to dozens of tutorials and complementary OSS projects
 
-Non-commercial users can enjoy free community support, and commercial users can rest assured that they have someone to talk to if things are not going to plan.
+You're gaining months worth of work to integrate directly to different cloud vendors and IaaS platforms, if you should need it such as: EC2, Azure, Packet, Scaleway, DigitalOcean and Civo. Terraform can also be used to automate inlets PRO.
 
-We also provide commercial support and can design a custom reference architecture for you whether using Kubernetes or not.
+Commercial users can rest assured that they have someone to talk to if things are not going to plan. For personal use, users can enjoy free community support.
 
 ## 14-day trial for unlimited use
 
@@ -42,11 +42,11 @@ A discounted license is made available for use with an unlimited amount of tunn
 
 Covered:
 
-* A tunnel for your blog
+* As an easier to use alternative to a VPN
+* A tunnel for learning Kubernetes on your own machines, saving money on cloud hosting, but still able to use the `LoadBalancer` service
 * A tunnel for your Raspberry Pi cluster, or homelab
-* A tunnel for learning Kubernetes
 * To access your home automation services and IoT devices
-* Personal sites, APIs and services which do not facilitate or advertise a commercial service
+* Exposing your blog, personal sites, APIs and services which do not facilitate or advertise a commercial service
 
 Not covered:
 
@@ -61,6 +61,8 @@ Not covered:
 Why do I need to purchase a fixed-term?
 
 inlets-pro is designed for automated use within a commercial-context, and as such does not include "call-home" functionality to a license server. The license is validated by JWT and must be purchased ahead of time, several durations are made available.
+
+### Purchase a personal license now
 
 * [Purchase inlets-pro for 6 or 12 months](https://store.openfaas.com/collections/software-licenses)
 
