@@ -31,8 +31,8 @@ For teams and individuals:
 
 There are two flavours of inlets tunnels depending on your needs:
 
-* [inlets](https://github.com/inlets/inlets) - L7 tunnel for HTTP/HTTPS, free and OSS. MIT license
-* [inlets-pro](https://github.com/inlets/inlets-pro) - L4 tunnel for any TCP traffic including automatic encryption with TLS. Commercial license: support & enterprise solutions available
+* [inlets-pro](https://github.com/inlets/inlets-pro) - L4 tunnel for any TCP traffic including automatic encryption with TLS. Commercial license: support & enterprise solutions available.
+* [inlets](https://github.com/inlets/inlets) - L7 tunnel for HTTP/HTTPS with OSS MIT license.
 
 In the diagram we can see a developer has exposed a Node.js website on his or her laptop through the use of inlets and a server that has a public IPv4 address.
 
@@ -44,10 +44,7 @@ The remote server is called an "exit-node" or "exit-server" because that is wher
 
 Exit-servers run the inlets server component (the control-plane) on a given port and accept incoming requests from the inlets client. You can create these manually and customise them, or automate them through tooling such as [Terraform](https://www.terraform.io) or bash.
 
-You can create your own exit-server, or use an existing computer and run `inlets-pro server` or `inlets server` there.
-
-* [inlets repo](https://github.com/inlets/inlets)
-* [inlets PRO repo](https://github.com/inlets/inlets-pro)
+You can create and manage your own exit-servers, or use an existing computer and run `inlets-pro server` or `inlets server`.
 
 There are two community projects which automate the creation and configuration of your exit-servers. Both inlets and -pro as supported on: DigitalOcean, Packet, Scaleway, Civo, AWS, Azure and GCP.
 
