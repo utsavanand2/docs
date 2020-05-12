@@ -2,6 +2,9 @@
 
 In this quick-start the inlets-operator for Kubernetes will enable us to get a public IP address for a LoadBalancer service in our private cluster.
 
+> This sample is to show that an internal service can be exposed with a LoadBalancer.
+> To expose an IngressController and for full TLS termination, see the example here: [Expose Your IngressController and get TLS from LetsEncrypt](https://docs.inlets.dev/#/get-started/quickstart-ingresscontroller-cert-manager?id=expose-your-ingresscontroller-and-get-tls-from-letsencrypt)
+
 ## Pre-reqs
 
 * A computer or laptop running MacOS or Linux, or Git Bash or WSL on Windows
@@ -13,12 +16,14 @@ In this quick-start the inlets-operator for Kubernetes will enable us to get a p
 
 We're going to use [KinD](https://github.com/kubernetes-sigs/kind), which runs inside a container with Docker for Mac or the Docker daemon. MacOS cannot actually run containers or Kubernetes itself, so projects like Docker for Mac create a small Linux VM and hide it away.
 
+If you don't have kubectl, you can [download it here](https://kubernetes.io/docs/tasks/tools/install-kubectl/).
+
 You can use an alternative to KinD if you have a preferred tool.
 
 Get a KinD binary release:
 
 ```bash
-curl -Lo ./kind "https://github.com/kubernetes-sigs/kind/releases/download/v0.7.0/kind-$(uname)-amd64"
+curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.8.0/kind-$(uname)-amd64
 chmod +x ./kind
 sudo mv /kind /usr/local/bin
 ```
@@ -62,7 +67,7 @@ You can use arkade or helm to install the inlets-operator:
 curl -sSLf https://dl.get-arkade.dev/ | sudo sh
 ```
 
-Save an access token for your cloud provider as `$HOME/access-token`, in this example we're using DigitalOcean.
+Save an access token for your cloud provider as `$HOME/do-access-token`, in this example we're using DigitalOcean.
 
 ```bash
 arkade install inlets-operator \
@@ -79,8 +84,41 @@ Set the `--region` flag as required, it's best to have low latency between your 
 
 We'll create a test deployment of Nginx:
 
+For Kubernetes 1.17 and lower:
+
 ```bash
 kubectl run nginx-1 --image=nginx --port=80 --restart=Always
+```
+
+For 1.18 and higher:
+
+```bash
+export DEPLOYMENT=nginx-1
+
+(cat<<EOF
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: $DEPLOYMENT
+  labels:
+    app: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+EOF
+) | kubectl apply -f -
 ```
 
 Now create a service of type LoadBalancer:
@@ -123,6 +161,12 @@ Now if you'd like to delete the tunnel and its exit-server, simply delete the Ku
 
 ```bash
 kubectl delete svc/nginx-1
+```
+
+You can also delete the deployment:
+
+```bash
+kubectl delete deploy/nginx-1
 ```
 
 If you want to, you can see the logs of the operator with `kubectl logs inlets-operator -f`.
