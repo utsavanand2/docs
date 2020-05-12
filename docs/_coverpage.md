@@ -1,6 +1,6 @@
 ![logo](images/inlets-logo.svg ':size=300%')
 
-> Cloud Native Tunnel for professionals.
+> inlets: Cloud Native Tunnel.
 
 [GitHub](https://github.com/inlets/)
 [Getting Started](#cloud-native-tunnel)
