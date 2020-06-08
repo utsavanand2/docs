@@ -154,6 +154,9 @@ spec:
           class:  nginx
 ```
 
+While the Let's Encrypt production server has strict limits on the API, the staging server is more forgiving, and
+should be used while you are testing a deployment.
+
 Edit `email`, then run: `kubectl apply -f issuer.yaml`.
 
 Let's use helm3 to install Alex's example Node.js API [available on GitHub](https://github.com/alexellis/expressjs-k8s)
@@ -200,7 +203,62 @@ NAME            READY   SECRET          AGE
 expressjs-tls   True    expressjs-tls   49s
 ```
 
-Open the webpage i.e. https://api.example.com
+Open the webpage i.e. https://api.example.com. Since this is a staging certificate, you will get a warning
+from your browser. You can accept the certificate in order to test your site.
+
+## Getting a Production Certificate
+
+Create a production certificate issuer `issuer-prod.yaml`, similar to the staging issuer you produced
+earlier. Be sure to change the email address to your email.
+
+```yaml
+cat > issuer-prod.yaml <<EOF
+apiVersion: cert-manager.io/v1alpha2
+kind: Issuer
+metadata:
+  name: letsencrypt-prod
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: you@example.com
+    privateKeySecretRef:
+      name: letsencrypt-prod
+    solvers:
+    - http01:
+        ingress:
+          class: nginx
+EOF
+```
+
+After editing the email, run `kubectl apply -f issuer-prod.yaml`.
+
+Now you must update your `expressjs` deployment to use the new certificate issuer. Create a new
+helm3 overrides file `custom-prod.yaml`:
+
+```
+cat > custom-prod.yaml <<EOF
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/issuer: "letsencrypt-prod"
+  hosts:
+    - host: expressjs.inlets.dev
+      paths: ["/"]
+  tls:
+   - secretName: expressjs-tls
+     hosts:
+       - expressjs.inlets.dev
+EOF
+```
+
+Be sure to change the above domain name to your domain name for the sample server.
+
+You can update your deployment using the helm command below:
+
+```bash
+helm upgrade express expressjs-k8s/expressjs-k8s --values custom-prod.yaml
+```
 
 Here's my example on my own domain:
 
