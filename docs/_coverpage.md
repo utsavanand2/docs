@@ -1,4 +1,4 @@
-![logo](images/inlets-logo.svg ':size=300%')
+![logo](images/inlets-logo.svg ':size=50%')
 
 > inlets: Cloud Native Tunnel.
 
