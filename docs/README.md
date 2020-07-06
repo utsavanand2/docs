@@ -81,7 +81,10 @@ Kubernetes:
 
 Buy an inlets PRO license for personal or commercial use:
 
-[inlets PRO features and pricing](/pricing/?id=pricing)
+* [inlets PRO features and pricing](/pricing/?id=pricing)
+
+* [Start a free 14-day trial of inlets PRO](https://docs.google.com/forms/d/e/1FAIpQLScfNQr1o_Ctu_6vbMoTJ0xwZKZ3Hszu9C-8GJGWw1Fnebzz-g/viewform)
+
 
 ### Professional services
 

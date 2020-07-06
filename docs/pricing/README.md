@@ -32,7 +32,7 @@ Commercial users can rest assured that they have someone to talk to if things ar
 
 Find out if inlets-pro is for you with a free 14-day, no-obligation trial. In that time you can evaluate inlets-pro for unlimited use - whether business, commercial or enterprise.
 
-* [Apply for your trial](https://github.com/inlets/inlets-pro#getting-a-license-key)
+* [Apply for your trial](https://docs.google.com/forms/d/e/1FAIpQLScfNQr1o_Ctu_6vbMoTJ0xwZKZ3Hszu9C-8GJGWw1Fnebzz-g/viewform)
 
 After completing the trial, you have several options for purchase.
 
