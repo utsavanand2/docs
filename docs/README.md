@@ -53,27 +53,26 @@ There are two community projects which automate the creation and configuration o
 
 ## Get started
 
-* [Quick-start: expose a HTTP server with a public IP](/get-started/quickstart-http?id=expose-a-http-server-with-a-public-ip)
+### inlets PRO
 
 * [Quick-start: get SSH access from anywhere](/get-started/quickstart-tcp-ssh?id=get-ssh-access-from-anywhere)
-
-* [Video: Get public endpoints in seconds with inlets and create-react-app](https://www.youtube.com/watch?v=jrAqqe8N3q4&feature=youtu.be)
-
 * [inlets PRO CLI reference](https://github.com/inlets/inlets-pro/blob/master/docs/cli-reference.md)
+* [Micro-tutorial - securely tunnel PostgreSQL or MariaDB with TLS](https://gist.github.com/alexellis/995b518a653d172dda4b0901dcdaa391)
+* [TCP tunnel for Apache Cassandra running on your local machine, out to another network](https://github.com/inlets/inlets-pro/blob/master/docs/cassandra-tutorial.md)
+* [Expose your private Grafana dashboards with Caddy and TLS](https://blog.alexellis.io/expose-grafana-dashboards/)
+* [Reference architectures and configurations](https://github.com/inlets/inlets-pro)
 
-* [Tunnel PostgreSQL or MariaDB with TLS](https://gist.github.com/alexellis/995b518a653d172dda4b0901dcdaa391)
+### inlets PRO with Kubernetes
 
-* [Expose your private Grafana dashboards with TLS](https://blog.alexellis.io/expose-grafana-dashboards/)
+* PRO - [Quick-start: expose Your IngressController and get TLS from LetsEncrypt](/get-started/quickstart-ingresscontroller-cert-manager?id=expose-your-ingresscontroller-and-get-tls-from-letsencrypt)
+* PRO - [Get kubectl access to your private cluster from anywhere](https://blog.alexellis.io/get-private-kubectl-access-anywhere/)
+* PRO - [Get a private Docker registry with auth and TLS](https://blog.alexellis.io/get-a-tls-enabled-docker-registry-in-5-minutes/)
 
-Kubernetes:
+### inlets OSS examples
 
-* [Quick-start: expose Your IngressController and get TLS from LetsEncrypt](/get-started/quickstart-ingresscontroller-cert-manager?id=expose-your-ingresscontroller-and-get-tls-from-letsencrypt)
-
-* [Get kubectl access to your private cluster from anywhere](https://blog.alexellis.io/get-private-kubectl-access-anywhere/)
-
+* [Quick-start: expose a HTTP server with a public IP](/get-started/quickstart-http?id=expose-a-http-server-with-a-public-ip)
+* [Video: Get public endpoints in seconds with inlets and create-react-app](https://www.youtube.com/watch?v=jrAqqe8N3q4&feature=youtu.be)
 * [Quick-start: expose a Kubernetes Pod with KinD](/get-started/quickstart-k8s?id=expose-nginx-from-your-kubernetes-cluster-with-kind)
-
-* [Get a private Docker registry with auth and TLS](https://blog.alexellis.io/get-a-tls-enabled-docker-registry-in-5-minutes/)
 
 ## Pricing
 
