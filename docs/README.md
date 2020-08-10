@@ -4,7 +4,7 @@ You can use inlets to connect HTTP and TCP services between networks securely. T
 
 VPNs traditionally require up-front configuration like subnet assignment and ports to be opened in firewalls. A tunnel with inlets can provide an easy-to-use, low-maintenance alternative to VPNs and other site-to-site networking solutions. 
 
-You can run inlets as a stand-alone binary, in Docker, integrated into Kubernetes for Ingress, or with cloud APIs. All services can be kept private in the target network, or exposed publicly.
+You can run inlets as a stand-alone binary, in Docker, integrated into [Kubernetes](https://kubernetes.io) for [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/), or with cloud APIs. All services can be kept private in the target network, or exposed publicly.
 
 ## Use-cases
 
@@ -55,16 +55,16 @@ There are two community projects which automate the creation and configuration o
 
 ### inlets PRO
 
+* [inlets PRO - reference architectures and configurations](https://github.com/inlets/inlets-pro)
 * [Quick-start: get SSH access from anywhere](/get-started/quickstart-tcp-ssh?id=get-ssh-access-from-anywhere)
 * [inlets PRO CLI reference](https://github.com/inlets/inlets-pro/blob/master/docs/cli-reference.md)
-* [Micro-tutorial - securely tunnel PostgreSQL or MariaDB with TLS](https://gist.github.com/alexellis/995b518a653d172dda4b0901dcdaa391)
-* [TCP tunnel for Apache Cassandra running on your local machine, out to another network](https://github.com/inlets/inlets-pro/blob/master/docs/cassandra-tutorial.md)
-* [Expose your private Grafana dashboards with Caddy and TLS](https://blog.alexellis.io/expose-grafana-dashboards/)
-* [Reference architectures and configurations](https://github.com/inlets/inlets-pro)
+* [Tunnel PostgreSQL or MariaDB with TLS encryption](https://gist.github.com/alexellis/995b518a653d172dda4b0901dcdaa391)
+* [Expose Apache Cassandra running on your local machine, out to another network with TLS encryption](https://github.com/inlets/inlets-pro/blob/master/docs/cassandra-tutorial.md)
+* [Expose your private Grafana devops dashboards with Caddy and TLS](https://blog.alexellis.io/expose-grafana-dashboards/)
 
 ### inlets PRO with Kubernetes
 
-* PRO - [Quick-start: expose Your IngressController and get TLS from LetsEncrypt](/get-started/quickstart-ingresscontroller-cert-manager?id=expose-your-ingresscontroller-and-get-tls-from-letsencrypt)
+* PRO - [Expose Your IngressController and get TLS from LetsEncrypt with cert-manager](/get-started/quickstart-ingresscontroller-cert-manager?id=expose-your-ingresscontroller-and-get-tls-from-letsencrypt)
 * PRO - [Get kubectl access to your private cluster from anywhere](https://blog.alexellis.io/get-private-kubectl-access-anywhere/)
 * PRO - [Get a private Docker registry with auth and TLS](https://blog.alexellis.io/get-a-tls-enabled-docker-registry-in-5-minutes/)
 
