@@ -64,18 +64,24 @@ inlets-pro is designed for automated use within a commercial-context, and as suc
 
 ### Purchase a personal license now
 
-* [Purchase inlets-pro for 6 or 12 months](https://store.openfaas.com/collections/software-licenses)
+A personal license includes unlimited tunnels for non-commercial use.
+
+* [Purchase inlets PRO for 12-months](https://store.openfaas.com/collections/software-licenses/products/inlets-pro-personal-license-12-mo)
+
+For a limited time, new users can [purchase a 6-month personal license for inlets PRO](https://store.openfaas.com/collections/software-licenses/products/inlets-pro-personal-license-6-mo).
 
 ## Business and commercial
 
-Pricing for business and commercial use includes unlimited use of inlets-pro for a set number of tunnels.
+How does pricing work for commercial use?
 
-Book a time for a free consultation with the team to see we can help you. Contact [sales@openfaas.com](mailto:sales@openfaas.com) along with the number of tunnels you require.
+There is a minimum purchase of 5 tunnels at 25 GBP / tunnel. You can add additional tunnels at a cost of 20 GBP / tunnel using an add-on product.
+
+* [5x tunnel bundle](https://store.openfaas.com/collections/software-licenses/products/inlets-pro-commercial-subscription)
+* [1x add-on tunnel](https://store.openfaas.com/collections/software-licenses/products/inlets-pro-commercial-subscription-top-up-tunnel)
+
+If you have questions, feel free to contact us at: [sales@openfaas.com](mailto:sales@openfaas.com).
 
 ## Enterprise solutions
 
-Do you need a custom solution?
+Do you need a custom solution or bulk-pricing? Contact us at [sales@openfaas.com](mailto:sales@openfaas.com) along with the number of tunnels you require and your questions.
 
-What about bulk-pricing or bespoke features such as OIDC/OAuth2 and your own custom control-plane?
-
-Book a time for a free consultation with the team to see we can help you. Contact [sales@openfaas.com](mailto:sales@openfaas.com) along with the number of tunnels you require.

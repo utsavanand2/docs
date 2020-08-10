@@ -82,14 +82,15 @@ Buy an inlets PRO license for personal or commercial use:
 
 * [inlets PRO features and pricing](/pricing/?id=pricing)
 
-* [Start a free 14-day trial of inlets PRO](https://docs.google.com/forms/d/e/1FAIpQLScfNQr1o_Ctu_6vbMoTJ0xwZKZ3Hszu9C-8GJGWw1Fnebzz-g/viewform)
+Try before you buy?
 
+* [Start a free 14-day trial of inlets PRO](https://docs.google.com/forms/d/e/1FAIpQLScfNQr1o_Ctu_6vbMoTJ0xwZKZ3Hszu9C-8GJGWw1Fnebzz-g/viewform)
 
 ### Professional services
 
 inlets, inlets-operator and inletsctl are all OSS and distributed under the MIT license.
 
-Contact [sales@openfaas.com](mailto:sales@openfaas.com) for a quote on commercial support, training, and custom solutions for inlets or inlets PRO.
+Contact [sales@openfaas.com](mailto:sales@openfaas.com) for a quote on commercial support, training, and custom solutions for inlets OSS or inlets PRO.
 
 ## Connect with the community
 
