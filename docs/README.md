@@ -64,9 +64,9 @@ There are two community projects which automate the creation and configuration o
 
 ### inlets PRO with Kubernetes
 
-* PRO - [Expose Your IngressController and get TLS from LetsEncrypt with cert-manager](/get-started/quickstart-ingresscontroller-cert-manager?id=expose-your-ingresscontroller-and-get-tls-from-letsencrypt)
-* PRO - [Get kubectl access to your private cluster from anywhere](https://blog.alexellis.io/get-private-kubectl-access-anywhere/)
-* PRO - [Get a private Docker registry with auth and TLS](https://blog.alexellis.io/get-a-tls-enabled-docker-registry-in-5-minutes/)
+* [Expose Your IngressController and get TLS from LetsEncrypt with cert-manager](/get-started/quickstart-ingresscontroller-cert-manager?id=expose-your-ingresscontroller-and-get-tls-from-letsencrypt)
+* [Get kubectl access to your private cluster from anywhere](https://blog.alexellis.io/get-private-kubectl-access-anywhere/)
+* [Get a private Docker registry with auth and TLS](https://blog.alexellis.io/get-a-tls-enabled-docker-registry-in-5-minutes/)
 
 ### inlets OSS examples
 
