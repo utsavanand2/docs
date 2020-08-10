@@ -6,7 +6,7 @@ Contact [sales@openfaas.com](mailto:sales@openfaas.com) for a quote on commercia
 
 <img src="../images/inlets-pro-purple.png" width="250px">
 
-[Purchase inlets-pro for 6 or 12 months](https://store.openfaas.com/collections/software-licenses)
+* [Purchase inlets PRO now](https://store.openfaas.com/collections/software-licenses)
 
 ## Why PRO?
 
