@@ -62,6 +62,12 @@ There are two community projects which automate the creation and configuration o
 * [Expose Apache Cassandra running on your local machine, out to another network with TLS encryption](https://github.com/inlets/inlets-pro/blob/master/docs/cassandra-tutorial.md)
 * [Expose your private Grafana devops dashboards with Caddy and TLS](https://blog.alexellis.io/expose-grafana-dashboards/)
 
+### inlets PRO Community blog posts
+
+* [Inlets Pro Homelab Awesomeness by Matt Brewster](https://blog.brewsterops.dev/post/inlets-pro-homelab/)
+* [Save Money by Connecting Your Local Database to the Public Cloud by Burton Rheutan](https://medium.com/@burtonr/local-database-for-the-cloud-with-inlets-pro-ac0488cc54e0)
+* [Exploring NAT Traversal and Tunnels with Inlets and Inlets Pro by Alistair Hey](https://blog.heyal.co.uk/inlets-pro/)
+
 ### inlets PRO with Kubernetes
 
 * [Expose Your IngressController and get TLS from LetsEncrypt with cert-manager](/get-started/quickstart-ingresscontroller-cert-manager?id=expose-your-ingresscontroller-and-get-tls-from-letsencrypt)
