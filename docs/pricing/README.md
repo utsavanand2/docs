@@ -1,16 +1,12 @@
 # Pricing
 
-inlets, inlets-operator and inletsctl are all OSS and distributed under the MIT license.
-
-Contact [sales@openfaas.com](mailto:sales@openfaas.com) for a quote on commercial support, training, and custom solutions for inlets or inlets-pro.
-
 <img src="../images/inlets-pro-purple.png" width="250px">
 
-* [Purchase inlets PRO now](https://store.openfaas.com/collections/software-licenses)
+Inlets PRO is a commercial-grade Cloud Native Tunnel which is secure by default through automatic TLS (encryption).
+
+* [Click here to view the inlets PRO micro-site and pricing tiers](https://inlets.dev)
 
 ## Why PRO?
-
-Inlets PRO is a commercial-grade Cloud Native Tunnel which is secure by default through automatic TLS (encryption).
 
 * Tunnel through NAT and firewalls transparently
 * Automatic link-level encryption for any TCP protocol
@@ -28,6 +24,8 @@ You're gaining months worth of work to integrate directly to different cloud ven
 
 Commercial users can rest assured that they have someone to talk to if things are not going to plan. For personal use, users can enjoy free community support.
 
+* [Click here to view the inlets PRO micro-site and pricing tiers](https://inlets.dev)
+
 ## 14-day trial for unlimited use
 
 Find out if inlets-pro is for you with a free 14-day, no-obligation trial. In that time you can evaluate inlets-pro for unlimited use - whether business, commercial or enterprise.
@@ -36,7 +34,7 @@ Find out if inlets-pro is for you with a free 14-day, no-obligation trial. In th
 
 After completing the trial, you have several options for purchase.
 
-## Personal use, non-commercial use
+## What is personal, non-commercial use?
 
 A discounted license is made available for use with an unlimited amount of tunnels for non-commercial, personal-use.
 
@@ -84,4 +82,3 @@ If you have questions, feel free to contact us at: [sales@openfaas.com](mailto:s
 ## Enterprise solutions
 
 Do you need a custom solution or bulk-pricing? Contact us at [sales@openfaas.com](mailto:sales@openfaas.com) along with the number of tunnels you require and your questions.
-
