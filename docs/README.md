@@ -51,7 +51,12 @@ There are two community projects which automate the creation and configuration o
 * [inletsctl](https://github.com/inlets/inletsctl)  - create exit-servers for inlets/-pro
 * [inlets-operator](https://github.com/inlets/inlets-operator) - Kubernetes automation to create exit-servers for inlets/-pro including a CRD
 
-## Get started
+## Reference documentation
+
+* [inletsctl documentation](/tools/inletsctl?id=inletsctl-reference-documentation)
+* [inlets PRO CLI reference guide](https://github.com/inlets/inlets-pro/blob/master/docs/cli-reference.md)
+
+## Tutorials
 
 ### inlets PRO
 
@@ -59,7 +64,6 @@ There are two community projects which automate the creation and configuration o
 * [Quick-start: Expose a local website with HTTPS using Caddy](/get-started/quickstart-caddy)
 * [Quick-start: Tunnel a private database over inlets PRO](/get-started/quickstart-tcp-database)
 
-* [inlets PRO CLI reference](https://github.com/inlets/inlets-pro/blob/master/docs/cli-reference.md)
 * [inlets PRO - reference architectures and configurations](https://github.com/inlets/inlets-pro)
 * [Expose Apache Cassandra running on your local machine, out to another network with TLS encryption](https://github.com/inlets/inlets-pro/blob/master/docs/cassandra-tutorial.md)
 * [Expose your private Grafana devops dashboards with Caddy and TLS](https://blog.alexellis.io/expose-grafana-dashboards/)
