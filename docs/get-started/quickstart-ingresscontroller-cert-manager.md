@@ -1,8 +1,10 @@
-# Expose Your IngressController and get TLS from LetsEncrypt
+# Quick-start: Expose Your IngressController and get TLS from LetsEncrypt and cert-manager
 
-In this quick-start we will configure the inlets-operator to use inlets-pro (a TCP proxy) to expose NginxIngress so that it can receive HTTPS certificates via LetsEncrypt and cert-manager.
+In this quick-start we will configure the inlets-operator to use inlets-pro (a TCP proxy) to expose NginxIngress so that it can receive HTTPS certificates via LetsEncrypt and [cert-manager](https://github.com/jetstack/cert-manager).
 
-> Note: If you don't have a license for inlets-pro, you can get [a 14-day free trial](https://docs.google.com/forms/d/e/1FAIpQLScfNQr1o_Ctu_6vbMoTJ0xwZKZ3Hszu9C-8GJGWw1Fnebzz-g/viewform), or just use the free OSS inlets option, your IngressController will be able to serve plaintext HTTP over port 80, but you won't be able to obtain a TLS certificate.
+> You will need an inlets PRO license, [start a 14-day free trial](https://inlets.dev/).
+
+If you don't have a license for inlets PRO, then your IngressController will only be able to serve plaintext HTTP over port 80 and you won't be able to obtain a TLS certificate.
 
 ## Pre-reqs
 
@@ -20,7 +22,7 @@ You can use an alternative to KinD if you have a preferred tool.
 Get a KinD binary release:
 
 ```bash
-curl -Lo ./kind "https://github.com/kubernetes-sigs/kind/releases/download/v0.7.0/kind-$(uname)-amd64"
+curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.8.1/kind-$(uname)-amd64
 chmod +x ./kind
 sudo mv ./kind /usr/local/bin
 ```
@@ -30,7 +32,7 @@ Now create a cluster:
 ```bash
  kind create cluster
 Creating cluster "kind" ...
- ✓ Ensuring node image (kindest/node:v1.17.0) 🖼
+ ✓ Ensuring node image (kindest/node:v1.18.0) 🖼
  ✓ Preparing nodes 📦  
  ✓ Writing configuration 📜 
  ✓ Starting control-plane 🕹️ 
@@ -50,17 +52,16 @@ We can check that our single node is ready now:
 kubectl get node -o wide
 
 NAME                 STATUS     ROLES    AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE       KERNEL-VERSION     CONTAINER-RUNTIME
-kind-control-plane      Ready   master   35s   v1.17.0   172.17.0.2    <none>        Ubuntu 19.10   5.3.0-26-generic   containerd://1.3.2
+kind-control-plane      Ready   master   35s   v1.18.0   172.17.0.2    <none>        Ubuntu 19.10   5.3.0-26-generic   containerd://1.3.2
 ```
 
 The above shows one node Ready, so we are ready to move on.
 
 ## Install arkade
 
-You can use arkade or helm to install the various applications we are going to add to the cluster below. arkade provides an apps ecosystem that makes things much quicker.
+You can use [arkade](https://get-arkade.dev) or helm to install the various applications we are going to add to the cluster below. arkade provides an apps ecosystem that makes things much quicker.
 
 ```bash
-# Get arkade
 curl -sSLf https://dl.get-arkade.dev/ | sudo sh
 ```
 
@@ -127,7 +128,7 @@ TLS certificates require a domain name and DNS A or CNAME entry, so let's set th
 
 Find the External-IP:
 
-```
+```bash
 kubectl get svc
 ```
 

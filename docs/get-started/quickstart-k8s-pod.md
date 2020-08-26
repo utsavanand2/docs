@@ -1,4 +1,4 @@
-# Expose Nginx from your Kubernetes cluster with KinD
+# Quick-start: Expose a Pod from your Kubernetes cluster with KinD
 
 In this quick-start the inlets-operator for Kubernetes will enable us to get a public IP address for a LoadBalancer service in our private cluster.
 
@@ -23,7 +23,7 @@ You can use an alternative to KinD if you have a preferred tool.
 Get a KinD binary release:
 
 ```bash
-curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.8.0/kind-$(uname)-amd64
+curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.8.1/kind-$(uname)-amd64
 chmod +x ./kind
 sudo mv ./kind /usr/local/bin
 ```
@@ -33,7 +33,7 @@ Now create a cluster:
 ```bash
  kind create cluster
 Creating cluster "kind" ...
- ✓ Ensuring node image (kindest/node:v1.17.0) 🖼
+ ✓ Ensuring node image (kindest/node:v1.18.0) 🖼
  ✓ Preparing nodes 📦  
  ✓ Writing configuration 📜 
  ✓ Starting control-plane 🕹️ 
@@ -53,17 +53,16 @@ We can check that our single node is ready now:
 kubectl get node -o wide
 
 NAME                 STATUS     ROLES    AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE       KERNEL-VERSION     CONTAINER-RUNTIME
-kind-control-plane      Ready   master   35s   v1.17.0   172.17.0.2    <none>        Ubuntu 19.10   5.3.0-26-generic   containerd://1.3.2
+kind-control-plane      Ready   master   35s   v1.18.0   172.17.0.2    <none>        Ubuntu 19.10   5.3.0-26-generic   containerd://1.3.2
 ```
 
 The above shows one node Ready, so we are ready to move on.
 
 ## Install the inlets-operator
 
-You can use arkade or helm to install the inlets-operator:
+You can use [arkade](https://get-arkade.dev) or helm to install the inlets-operator:
 
 ```bash
-# Get arkade
 curl -sSLf https://dl.get-arkade.dev/ | sudo sh
 ```
 
@@ -93,32 +92,8 @@ kubectl run nginx-1 --image=nginx --port=80 --restart=Always
 For 1.18 and higher:
 
 ```bash
-export DEPLOYMENT=nginx-1
-
-(cat<<EOF
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: $DEPLOYMENT
-  labels:
-    app: nginx
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: nginx
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-      - name: nginx
-        image: nginx:1.14.2
-        ports:
-        - containerPort: 80
-EOF
-) | kubectl apply -f -
+kubectl apply -f \
+ https://raw.githubusercontent.com/inlets/inlets-operator/master/contrib/nginx-sample-deployment.yaml
 ```
 
 Now create a service of type LoadBalancer:
@@ -170,4 +145,3 @@ kubectl delete deploy/nginx-1
 ```
 
 If you want to, you can see the logs of the operator with `kubectl logs inlets-operator -f`.
-

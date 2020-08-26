@@ -55,12 +55,21 @@ There are two community projects which automate the creation and configuration o
 
 ### inlets PRO
 
-* [inlets PRO - reference architectures and configurations](https://github.com/inlets/inlets-pro)
-* [Quick-start: get SSH access from anywhere](/get-started/quickstart-tcp-ssh?id=get-ssh-access-from-anywhere)
+* [Quick-start: Tunnel a private SSH server over inlets PRO](/get-started/quickstart-tcp-ssh)
+* [Quick-start: Expose a local website with HTTPS using Caddy](/get-started/quickstart-caddy)
+* [Quick-start: Tunnel a private database over inlets PRO](/get-started/quickstart-tcp-database)
+
 * [inlets PRO CLI reference](https://github.com/inlets/inlets-pro/blob/master/docs/cli-reference.md)
-* [Tunnel PostgreSQL or MariaDB with TLS encryption](https://gist.github.com/alexellis/995b518a653d172dda4b0901dcdaa391)
+* [inlets PRO - reference architectures and configurations](https://github.com/inlets/inlets-pro)
 * [Expose Apache Cassandra running on your local machine, out to another network with TLS encryption](https://github.com/inlets/inlets-pro/blob/master/docs/cassandra-tutorial.md)
 * [Expose your private Grafana devops dashboards with Caddy and TLS](https://blog.alexellis.io/expose-grafana-dashboards/)
+
+### inlets PRO with Kubernetes
+
+* [Quick-start: Expose Your IngressController and get TLS from LetsEncrypt and cert-manager](/get-started/quickstart-ingresscontroller-cert-manager?id=expose-your-ingresscontroller-and-get-tls-from-letsencrypt)
+
+* [Get kubectl access to your private cluster from anywhere](https://blog.alexellis.io/get-private-kubectl-access-anywhere/)
+* [Get a private Docker registry with auth and TLS](https://blog.alexellis.io/get-a-tls-enabled-docker-registry-in-5-minutes/)
 
 ### inlets PRO Community blog posts
 
@@ -68,17 +77,11 @@ There are two community projects which automate the creation and configuration o
 * [Save Money by Connecting Your Local Database to the Public Cloud by Burton Rheutan](https://medium.com/@burtonr/local-database-for-the-cloud-with-inlets-pro-ac0488cc54e0)
 * [Exploring NAT Traversal and Tunnels with Inlets and Inlets Pro by Alistair Hey](https://blog.heyal.co.uk/inlets-pro/)
 
-### inlets PRO with Kubernetes
-
-* [Expose Your IngressController and get TLS from LetsEncrypt with cert-manager](/get-started/quickstart-ingresscontroller-cert-manager?id=expose-your-ingresscontroller-and-get-tls-from-letsencrypt)
-* [Get kubectl access to your private cluster from anywhere](https://blog.alexellis.io/get-private-kubectl-access-anywhere/)
-* [Get a private Docker registry with auth and TLS](https://blog.alexellis.io/get-a-tls-enabled-docker-registry-in-5-minutes/)
-
 ### inlets OSS examples
 
-* [Quick-start: expose a HTTP server with a public IP](/get-started/quickstart-http?id=expose-a-http-server-with-a-public-ip)
+* [Quick-start: Expose a local HTTP server with a public IP](/get-started/quickstart-http)
+* [Quick-start: Expose a Pod from your Kubernetes cluster with KinD](/get-started/quickstart-k8s-pod)
 * [Video: Get public endpoints in seconds with inlets and create-react-app](https://www.youtube.com/watch?v=jrAqqe8N3q4&feature=youtu.be)
-* [Quick-start: expose a Kubernetes Pod with KinD](/get-started/quickstart-k8s?id=expose-nginx-from-your-kubernetes-cluster-with-kind)
 
 ## Pricing
 

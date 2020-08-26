@@ -1,10 +1,10 @@
- # Get SSH access from anywhere
+ # Quick-start: Tunnel a private SSH server over inlets PRO
 
-In this tutorial we will use inlets-pro to access your computer behind NAT or a firewall using SSH.
+In this tutorial we will use inlets-pro to access your computer behind NAT or a firewall. We'll do this by tunnelling SSH over inlets-pro, and clients will connect to your exit-server.
 
 Scenario: You want to allow SSH access to a computer that doesn't have a public IP, is inside a private network or behind a firewall. A common scenario is connecting to a Raspberry Pi on a home network or a home-lab.
 
-You will need: [a free trial license-key for inlets-pro](https://docs.google.com/forms/d/e/1FAIpQLScfNQr1o_Ctu_6vbMoTJ0xwZKZ3Hszu9C-8GJGWw1Fnebzz-g/viewform).
+> You will need an inlets PRO license, [start a 14-day free trial](https://inlets.dev/).
 
 ## Setup your exit node with `inletsctl`
 
@@ -18,7 +18,7 @@ On each of the computers you work with in this tutorial, you can use `inletsctl`
 
 ```bash
 curl -sLSf https://inletsctl.inlets.dev | sudo sh
-sudo inletsctl --download
+sudo inletsctl download --pro
 ```
 
 # Create an exit node
@@ -28,21 +28,17 @@ sudo inletsctl --download
 ```bash
 inletsctl create \
   --access-token-file ~/do-access-token \
-  --remote-tcp 192.168.0.35
+  --pro
 ```
-
-This should then create an exit node, which will forward all TCP traffic to through the client to the `remote-tcp` address that was set, in my case `192.168.0.35`.
 
 After the machine has been created, `inletsctl` will output a sample command for the `inlets-pro client` command:
 
 ```bash 
-export TCP_PORTS="8000"
-export LICENSE=""
-inlets-pro client --connect "wss://206.189.114.179:8123/connect" \
+inlets-pro client --url "wss://206.189.114.179:8123/connect" \
     --token "4NXIRZeqsiYdbZPuFeVYLLlYTpzY7ilqSdqhA0HjDld1QjG8wgfKk04JwX4i6c6F" \
-    --license "$LICENSE" \
-    --tcp-ports $TCP_PORTS
 ```
+
+Don't run this command, but note down the `--url` and `--token` parameters for later
 
 ## B) Manual setup of your exit node
 
@@ -52,7 +48,7 @@ Log in to your remote exit node with `ssh` and obtain the binary using `inletsct
 
 ```bash
 curl -sLSf https://inletsctl.inlets.dev | sudo sh
-sudo inletsctl --download
+sudo inletsctl download --pro
 ```
 
 Find your public IP:
@@ -74,12 +70,9 @@ echo $TOKEN
 Start the server:
 
 ```bash
-export PROXY_TO_HERE="localhost"
-
 sudo inlets-pro server \
   --auto-tls \
   --common-name $IP \
-  --remote-tcp $PROXY_TO_HERE \
   --token $TOKEN
 ```
 
@@ -127,23 +120,24 @@ ssh -p 2222 $IP "uptime"
 First download the inlets-pro client onto the machine running ssh
 
 ```bash
-curl -SLsf https://github.com/inlets/inlets-pro/releases/download/0.6.0/inlets-pro > inlets-pro
-chmod +x ./inlets-pro
-mv ./inlets-pro /usr/bin/inlets-pro
+sudo inletsctl download --pro
 ```
 
 Use the command from earlier to start the client on the server:
 
 ```bash 
 export TCP_PORTS="2222"
-export LICENSE="LICENSE_KEY"
-# export LICENSE="$(cat ~/LICENSE.txt)"
+export LICENSE="$(cat ~/LICENSE.txt)"
+export UPSTREAM="localhost"
 
-inlets-pro client --connect "wss://206.189.114.179:8123/connect" \
+inlets-pro client --url "wss://206.189.114.179:8123/connect" \
       --token "4NXIRZeqsiYdbZPuFeVYLLlYTpzY7ilqSdqhA0HjDld1QjG8wgfKk04JwX4i6c6F" \
       --license "$LICENSE" \
+      --upstream "$UPSTREAM" \
       --tcp-ports $TCP_PORTS
 ```
+
+You can alter UPSTREAM to point to another machine accessible from where you are running the inlets-pro client such as 192.168.0.10.
 
 ### Try it out
 
