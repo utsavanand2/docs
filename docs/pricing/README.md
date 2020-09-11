@@ -72,7 +72,9 @@ A personal license includes unlimited tunnels for non-commercial use.
 
 How does pricing work for commercial use?
 
-There is a minimum purchase of 5 tunnels, the bundle pricing also includes email support from OpenFaaS Ltd. You can add additional tunnels at a cost of 20 GBP / tunnel using the add-on product.
+There is a minimum purchase of 5 tunnels, the bundle pricing also includes email support from OpenFaaS Ltd.
+
+Additional tunnels beyond the ones included in the minimum package are purchased through an add-on tunnel and also include support.
 
 * [5x tunnel bundle](https://store.openfaas.com/collections/software-licenses/products/inlets-pro-commercial-subscription)
 * [1x add-on tunnel](https://store.openfaas.com/collections/software-licenses/products/inlets-pro-commercial-subscription-top-up-tunnel)
