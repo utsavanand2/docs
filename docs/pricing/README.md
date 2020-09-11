@@ -45,10 +45,12 @@ Covered:
 * A tunnel for your Raspberry Pi cluster, or homelab
 * To access your home automation services and IoT devices
 * Exposing your blog, personal sites, APIs and services which do not facilitate or advertise a commercial service
+* Sharing work with a client - sole-proprietors and freelancers
+
+Commercial exception for sole-proprietors and freelancers: you may use inlets PRO to share work with clients for demonstration purposes.
 
 Not covered:
 
-* Sharing work with a client
 * Integrating a product with a third-party or API
 * As part of a store, or e-commerce solution
 * Integrated into a product
@@ -66,13 +68,11 @@ A personal license includes unlimited tunnels for non-commercial use.
 
 * [Purchase inlets PRO for 12-months](https://store.openfaas.com/collections/software-licenses/products/inlets-pro-personal-license-12-mo)
 
-For a limited time, new users can [purchase a 6-month personal license for inlets PRO](https://store.openfaas.com/collections/software-licenses/products/inlets-pro-personal-license-6-mo).
-
 ## Business and commercial
 
 How does pricing work for commercial use?
 
-There is a minimum purchase of 5 tunnels at 25 GBP / tunnel. You can add additional tunnels at a cost of 20 GBP / tunnel using an add-on product.
+There is a minimum purchase of 5 tunnels, the bundle pricing also includes email support from OpenFaaS Ltd. You can add additional tunnels at a cost of 20 GBP / tunnel using the add-on product.
 
 * [5x tunnel bundle](https://store.openfaas.com/collections/software-licenses/products/inlets-pro-commercial-subscription)
 * [1x add-on tunnel](https://store.openfaas.com/collections/software-licenses/products/inlets-pro-commercial-subscription-top-up-tunnel)
