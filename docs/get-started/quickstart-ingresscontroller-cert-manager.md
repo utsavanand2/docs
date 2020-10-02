@@ -76,7 +76,6 @@ export LICENSE="INLETS_PRO_LICENSE_JWT"
 export ACCESS_TOKEN=$HOME/access-token
 
 arkade install inlets-operator \
- --helm3 \
  --provider digitalocean \
  --region lon1 \
  --token-file $ACCESS_TOKEN \
