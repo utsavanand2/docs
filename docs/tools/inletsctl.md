@@ -235,6 +235,27 @@ Query OK, 1 row affected (0.039 sec)
 * Create a Policy with the following:
 
 ```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:AuthorizeSecurityGroupIngress",
+                "ec2:DescribeInstances",
+                "ec2:DescribeImages",
+                "ec2:TerminateInstances",
+                "ec2:CreateSecurityGroup",
+                "ec2:CreateTags",
+                "ec2:DeleteSecurityGroup",
+                "ec2:RunInstances",
+                "ec2:DescribeInstanceStatus"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
 ```
 
 * Add the Policy to the IAM user
@@ -250,6 +271,19 @@ inletsctl create \
   --region eu-west-1 \
   --access-token-file ./access-key.txt \
   --secret-key-file ./secret-key.txt
+```
+
+Delete an exit-server:
+
+```bash
+export IP=""
+
+inletsctl create \
+  --provider ec2 \
+  --region eu-west-1 \
+  --access-token-file ./access-key.txt \
+  --secret-key-file ./secret-key.txt \
+  --ip $IP
 ```
 
 ### Example usage with Google Compute Engine
