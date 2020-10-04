@@ -92,7 +92,6 @@ inletsctl delete \
 
 ## The `create` command
 
-
 ## Quick-start - create an exit server
 
 This example uses DigitalOcean to create a cloud VM and then exposes a local service via the newly created exit-server.
@@ -230,80 +229,28 @@ MariaDB [(none)]> create database test;
 Query OK, 1 row affected (0.039 sec)
 ```
 
+### Example usage with AWS EC2
 
-### Example usage with Hetzner
+* Create an IAM user
+* Create a Policy with the following:
 
-```sh
-# Obtain the API token from Hetzner Cloud Console.
-export TOKEN=""
-
-inletsctl create --provider hetzner \
-  --access-token $TOKEN \
-  --region hel1
+```json
 ```
 
-Available regions are `hel1` (Helsinki), `nur1` (Nuremberg), `fsn1` (Falkenstein).
+* Add the Policy to the IAM user
+* Generate an access key for your IAM User
 
+Save the access-key as `access-key.txt` and your secret-key as `secret-key.txt`
 
-### Example usage with Azure
+Create an exit-server:
 
-Prerequisites:
-
-* You will need `az`. See [Install the Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
-
-
-Generate Azure auth file 
-```sh
-az ad sp create-for-rbac --sdk-auth > ~/Downloads/client_credentials.json
+```bash
+inletsctl create \
+  --provider ec2 \
+  --region eu-west-1 \
+  --access-token-file ./access-key.txt \
+  --secret-key-file ./secret-key.txt
 ```
-
-Create
-```sh
-inletsctl create --provider=azure --subscription-id=4d68ee0c-7079-48d2-b15c-f294f9b11a9e \
-  --region=eastus --access-token-file=~/Downloads/client_credentials.json 
-```
-
-Delete
-```sh
-inletsctl delete --provider=azure --id inlets-clever-volhard8 \
-  --subscription-id=4d68ee0c-7079-48d2-b15c-f294f9b11a9e \
-  --region=eastus --access-token-file=~/Downloads/client_credentials.json
-```
-
-
-### Example usage with Linode
-
-Prerequisites:
-
-* Prepare a Linode API Access Token. See [Create Linode API Access token](https://www.linode.com/docs/platform/api/getting-started-with-the-linode-api/#get-an-access-token)  
-
-
-Create
-```sh
-inletsctl create --provider=linode --access-token=<API Access Token> --region=us-east
-```
-
-Delete
-```sh
-inletsctl delete --provider=linode --access-token=<API Access Token> --id <instance id>
-```
-
-
-### Example usage with Scaleway
-
-```sh
-# Obtain from your Scaleway dashboard:
-export TOKEN=""
-export SECRET_KEY=""
-export ORG_ID=""
-
-inletsctl create --provider scaleway \
-  --access-token $TOKEN
-  --secret-key $SECRET_KEY --organisation-id $ORG_ID
-```
-
-The region is hard-coded to France / Paris 1.
-
 
 ### Example usage with Google Compute Engine
 
@@ -350,6 +297,77 @@ inletsctl create -p gce -p $PROJECTID -f=key.json
 # Or specify any valid Google Cloud Zone optional zone, by default it get provisioned in us-central1-a
 inletsctl create -p gce --project-id=$PROJECTID -f key.json --zone=us-central1-a
 ```
+
+### Example usage with Azure
+
+Prerequisites:
+
+* You will need `az`. See [Install the Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
+
+
+Generate Azure auth file 
+```sh
+az ad sp create-for-rbac --sdk-auth > ~/Downloads/client_credentials.json
+```
+
+Create
+```sh
+inletsctl create --provider=azure --subscription-id=4d68ee0c-7079-48d2-b15c-f294f9b11a9e \
+  --region=eastus --access-token-file=~/Downloads/client_credentials.json 
+```
+
+Delete
+```sh
+inletsctl delete --provider=azure --id inlets-clever-volhard8 \
+  --subscription-id=4d68ee0c-7079-48d2-b15c-f294f9b11a9e \
+  --region=eastus --access-token-file=~/Downloads/client_credentials.json
+```
+
+
+### Example usage with Hetzner
+
+```sh
+# Obtain the API token from Hetzner Cloud Console.
+export TOKEN=""
+
+inletsctl create --provider hetzner \
+  --access-token $TOKEN \
+  --region hel1
+```
+
+Available regions are `hel1` (Helsinki), `nur1` (Nuremberg), `fsn1` (Falkenstein).
+
+### Example usage with Linode
+
+Prerequisites:
+
+* Prepare a Linode API Access Token. See [Create Linode API Access token](https://www.linode.com/docs/platform/api/getting-started-with-the-linode-api/#get-an-access-token)  
+
+
+Create
+```sh
+inletsctl create --provider=linode --access-token=<API Access Token> --region=us-east
+```
+
+Delete
+```sh
+inletsctl delete --provider=linode --access-token=<API Access Token> --id <instance id>
+```
+
+### Example usage with Scaleway
+
+```sh
+# Obtain from your Scaleway dashboard:
+export TOKEN=""
+export SECRET_KEY=""
+export ORG_ID=""
+
+inletsctl create --provider scaleway \
+  --access-token $TOKEN
+  --secret-key $SECRET_KEY --organisation-id $ORG_ID
+```
+
+The region is hard-coded to France / Paris 1.
 
 ## Troubleshooting
 
