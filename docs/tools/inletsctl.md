@@ -231,15 +231,18 @@ Query OK, 1 row affected (0.039 sec)
 
 ### Example usage with AWS EC2
 
-* Create an IAM user
-* Create a Policy with the following:
+To use the instructions below you must have the AWS CLI configured with sufficient permissions to 
+create users and roles. 
 
-```json
+* Create a AWS IAM Policy with the following:
+
+Create a file named `policy.json` with the following content
+
+```json 
 {
     "Version": "2012-10-17",
-    "Statement": [
+    "Statement": [  
         {
-            "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": [
                 "ec2:AuthorizeSecurityGroupIngress",
@@ -252,16 +255,45 @@ Query OK, 1 row affected (0.039 sec)
                 "ec2:RunInstances",
                 "ec2:DescribeInstanceStatus"
             ],
-            "Resource": "*"
+            "Resource": ["*"]
         }
     ]
 }
 ```
 
-* Add the Policy to the IAM user
-* Generate an access key for your IAM User
+Create the policy in AWS 
 
-Save the access-key as `access-key.txt` and your secret-key as `secret-key.txt`
+```sh 
+aws iam create-policy --policy-name inlets-automation --policy-document file://policy.json
+```
+
+
+* Create an IAM user
+```sh 
+aws iam create-user --user-name inlets-automation
+```
+
+* Add the Policy to the IAM user
+
+We need to use the policy arn generated above, it should have been printed to the console on success. It also follows the format below.
+
+```sh 
+export AWS_ACCOUNT_NUMBER="Your AWS Account Number"
+aws iam attach-user-policy --user-name inlets-automation --policy-arn arn:aws:iam::${AWS_ACCOUNT_NUMBER}:policy/inlets-automation
+```
+
+* Generate an access key for your IAM User 
+
+The below commands will create a set of credentials and save them into files for use later on.
+
+> we are using [jq](https://stedolan.github.io/jq/) here. It can be installed using the link provided.
+> Alternatively you can print ACCESS_KEY_JSON and create the files manually.
+
+```sh 
+ACCESS_KEY_JSON=$(aws iam create-access-key --user-name inlets-automation)
+echo $ACCESS_KEY_JSON | jq -r .AccessKey.AccessKeyId > access-key.txt
+echo $ACCESS_KEY_JSON | jq -r .AccessKey.SecretAccessKey > secret-key.txt
+```
 
 Create an exit-server:
 
