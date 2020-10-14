@@ -161,7 +161,7 @@ Edit `email`, then run: `kubectl apply -f issuer.yaml`.
 
 Let's use helm3 to install Alex's example Node.js API [available on GitHub](https://github.com/alexellis/expressjs-k8s)
 
-Create a set of helm overrides for the domain-name `custom.yaml`:
+Create a `custom.yaml` file with the following:
 
 ```yaml
 ingress:
@@ -178,10 +178,23 @@ ingress:
        - expressjs.inlets.dev
 ```
 
-Now install the helm chart using the version of helm3 downloaded by arkade:
+Replace the string `expressjs.inlets.dev` with your own sub-domain created earlier i.e. `expressjs.example.com`.
+
+You can download around a dozen other CLI tools using arkade including helm. Use arkade to download helm and put it in your `PATH`:
 
 ```bash
+arkade get helm
+
+# Put arkade in your path:
 export PATH=$PATH:$HOME/.arkade/bin/helm3/
+
+# Or alternatively install to /usr/local/bin
+sudo cp $HOME/.arkade/bin/helm3/helm /usr/local/bin/
+```
+
+Now install the chart using helm:
+
+```bash
 helm repo add expressjs-k8s https://alexellis.github.io/expressjs-k8s/
 
 # Then they run an update
@@ -235,7 +248,7 @@ After editing the email, run `kubectl apply -f issuer-prod.yaml`.
 Now you must update your `expressjs` deployment to use the new certificate issuer. Create a new
 helm3 overrides file `custom-prod.yaml`:
 
-```
+```bash
 cat > custom-prod.yaml <<EOF
 ingress:
   enabled: true
@@ -268,7 +281,7 @@ You can view the certificate the certificate that's being served directly from y
 
 ![Green lock](../images/operator-pro-webpage-letsencrypt.png)
 
-## Try something else
+## Install a real-world application
 
 Using arkade you can now install OpenFaaS or a Docker Registry with a couple of commands, and since you have Nginx and cert-manager in place, this will only take a few moments.
 
