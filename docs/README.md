@@ -10,29 +10,31 @@ You can run inlets as a stand-alone binary, in Docker, integrated into [Kuberne
 
 You can use inlets as a stand-alone networking tool, or integrate it into a platform to extend functionality for your users.
 
-For companies:
+### For companies - hybrid cloud, multi-cluster and partner access
 
 * Low-maintenance, secure, and quick alternative to a VPN
-* Provide APIs endpoints to consume data from third-parties and partners
-* For command and control of: services within private VPCs, IoT devices and Point of Sale (PoS)
-* Create a hybrid cloud between existing servers and public cloud for: CI, e2e testing, or for accessing legacy systems
-* As an alternative to an expensive data-center uplink such as [AWS Direct Connect](https://aws.amazon.com/directconnect/) or [Azure Express Route](https://docs.microsoft.com/en-us/azure/expressroute/expressroute-introduction).
+* To build a hybrid cloud between existing servers and public cloud for: CI, e2e testing, or for accessing legacy databases and IT systems
+* To migrate on-premises databases and APIs to public cloud
+* To connect to the private environments of your customers in a SaaS product
+* For command and control of: services within private VPCs, IoT devices, and Point of Sale (PoS)
+* Exposing private API endpoints to third-parties and partners
+* As a cheaper, easier alternative to a data-center uplink or managed product like [AWS Direct Connect](https://aws.amazon.com/directconnect/) or [Azure Express Route](https://docs.microsoft.com/en-us/azure/expressroute/expressroute-introduction)
 
-For teams and individuals:
+### For teams and individuals - for public tunnels and Kubernetes connectivity
 
 * As a zero-touch VPN - penetrating NAT, firewalls, captive portals and hotel WiFi
 * When integrating with API that use webhooks such as Stripe, PayPal or GitHub, you can test live with your local machine
 * To get a public IP address for your IngressController or services on a Kubernetes cluster
 * To access your homelab or Raspberry Pi cluster using SSH
 * As a freelancer, you can share a blog or website with a client or with your team
-* As an alternative to SaaS and or proprietary offerings such as [Ngrok](https://ngrok.io) and [Argo Tunnel](https://www.cloudflare.com/en-gb/products/argo-tunnel/)
+* As an alternative to SaaS and or proprietary offerings such as [Ngrok](https://ngrok.io) and [Argo Tunnel](https://www.cloudflare.com/en-gb/products/argo-tunnel/) where you can use your own DNS, and decide your own rate-limits
 
 ## Concept
 
 There are two flavours of inlets tunnels depending on your needs:
 
-* [inlets-pro](https://github.com/inlets/inlets-pro) - L4 tunnel for any TCP traffic including automatic encryption with TLS. Commercial license: support & enterprise solutions available.
-* [inlets](https://github.com/inlets/inlets) - L7 tunnel for HTTP/HTTPS with OSS MIT license.
+* [inlets-pro](https://github.com/inlets/inlets-pro) - L4 tunnel for any TCP traffic including built-in TLS encryption. Commercial license: support & enterprise solutions available.
+* [inlets](https://github.com/inlets/inlets) - L7 tunnel for HTTP/HTTPS with OSS MIT license. TLS encryption needs to be added separately through a reverse proxy.
 
 In the diagram we can see a developer has exposed a Node.js website on his or her laptop through the use of inlets and a server that has a public IPv4 address.
 
@@ -42,18 +44,25 @@ The remote server is called an "exit-node" or "exit-server" because that is wher
 
 ## Exit-servers
 
-Exit-servers run the inlets server component (the control-plane) on a given port and accept incoming requests from the inlets client. You can create these manually and customise them, or automate them through tooling such as [Terraform](https://www.terraform.io) or bash.
+An exit-server is a host that runs the `inlets server` or `inlets-pro server` command to expose its control-plane (websocket) to inlets clients. The inlets client can then connect to the exit-server and make services within its local network available through the exit-server.
 
-You can create and manage your own exit-servers, or use an existing computer and run `inlets-pro server` or `inlets server`.
+Services are tunnelled through the exit-server, however unlike SaaS suchs such as Ngrok and Argo Tunnels, they do not need to be exposed on the public Internet. Exit-servers can also be run within Kubernetes Pods, and users who need to support many clients can use solutions like [inlets-cloud](https://inlets.dev/blog/2020/10/08/advanced-cloud-patterns.html).
 
-There are two community projects which automate the creation and configuration of your exit-servers. Both inlets and -pro as supported on: DigitalOcean, Packet, Scaleway, Civo, AWS, Azure and GCP.
+Exit servers can be set up manually, or you can use tooling like [Terraform](https://www.terraform.io), bash, cloud-init or additional inlets community projects:
 
-* [inletsctl](https://github.com/inlets/inletsctl)  - create exit-servers for inlets/-pro
-* [inlets-operator](https://github.com/inlets/inlets-operator) - Kubernetes automation to create exit-servers for inlets/-pro including a CRD
+* [inletsctl](https://github.com/inlets/inletsctl)  - create individual exit-servers
+* [inlets-operator](https://github.com/inlets/inlets-operator) - get an exit-server for each LoadBalancer service in your Kubernetes cluster
+
+> These share the same provisioning code and create exit-servers on a range of cloud platforms like: DigitalOcean, Packet, Scaleway, Hetzner, AWS EC2, Azure, and GCP.
 
 ## Reference documentation
 
+### inletsctl reference documentation
+
 * [inletsctl documentation](/tools/inletsctl?id=inletsctl-reference-documentation)
+
+### inlets PRO reference documentation
+
 * [inlets PRO CLI reference guide](https://github.com/inlets/inlets-pro/blob/master/docs/cli-reference.md)
 
 ## Tutorials
