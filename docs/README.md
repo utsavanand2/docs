@@ -63,6 +63,10 @@ Exit servers can be set up manually, or you can use tooling like [Terraform](htt
 
 * [inletsctl documentation](/tools/inletsctl?id=inletsctl-reference-documentation)
 
+### inlets-operator reference documentation
+
+* [inlets-operator documentation](/tools/inlets-operator?id=inlets-operator-reference-documentation)
+
 ### inlets PRO reference documentation
 
 * [inlets PRO CLI reference guide](https://github.com/inlets/inlets-pro/blob/master/docs/cli-reference.md)
