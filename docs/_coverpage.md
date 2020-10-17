@@ -1,9 +1,9 @@
-![logo](images/inlets-logo.svg ':size=50%')
+![logo](images/inlets-oss-logo.svg ':size=50%')
 
-> inlets: Cloud Native Tunnel.
+> inlets: Cloud Native Tunnel
 
 [GitHub](https://github.com/inlets/)
 [Getting Started](#cloud-native-tunnel)
 
 <!-- background color -->
-![color](#f0f0f0)
+![color](#FFFFFF)
