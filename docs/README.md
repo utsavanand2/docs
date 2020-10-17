@@ -100,12 +100,6 @@ Exit servers can be set up manually, or you can use tooling like [Terraform](htt
 
 ## Pricing
 
-### inlets OSS
-
-Perhaps the open source version of inlets is for you, feel free to reach out to us at [sales@openfaas.com](mailto:sales@openfaas.com) for a quote on commercial support, training, and custom solutions for any of the inlets projects.
-
-Do you need to connect many clients to your inlets servers? Ask us about inlets-cloud, which can support thousands of tunnels and clients using inlets OSS or inlets PRO. inlets-cloud has its own REST API, metrics, authorization and CLI and is ideal for companies.
-
 ### inlets PRO
 
 Buy an inlets PRO license for personal or commercial use:
@@ -116,13 +110,13 @@ Try before you buy?
 
 * [Start a free 14-day trial of inlets PRO](https://docs.google.com/forms/d/e/1FAIpQLScfNQr1o_Ctu_6vbMoTJ0xwZKZ3Hszu9C-8GJGWw1Fnebzz-g/viewform)
 
-## Connect with the community
+### inlets OSS
 
-Follow [@inletsdev](https://twitter.com/inletsdev) on Twitter.
+Perhaps the open source version of inlets is for you, feel free to reach out to us at [sales@openfaas.com](mailto:sales@openfaas.com) for a quote on commercial support, training, and custom solutions for any of the inlets projects.
 
-Join the `#inlets` channel on [OpenFaaS Slack](https://slack.openfaas.io/)
+Do you need to connect many clients to your inlets servers? Ask us about inlets-cloud, which can support thousands of tunnels and clients using inlets OSS or inlets PRO. inlets-cloud has its own REST API, metrics, authorization and CLI and is ideal for companies.
 
-[Contribute to this documentation on GitHub](https://github.com/inlets/docs/)
+Alternatively, if you're a home user or a small company using inlets PRO, [please become a GitHub Sponsor](https://github.com/sponsors/alexellis).
 
 ### Buy SWAG
 
@@ -131,6 +125,14 @@ If you are using the project and want to support the community, then buy some SW
 ![T-shirt and hoodie](images/inlets-swag.jpg)
 
 **Buy your own [inlets t-shirt, hoodie or mug](https://store.openfaas.com/)**
+
+## Connect with the community
+
+Follow [@inletsdev](https://twitter.com/inletsdev) on Twitter.
+
+Join the `#inlets` channel on [OpenFaaS Slack](https://slack.openfaas.io/)
+
+[Contribute to this documentation on GitHub](https://github.com/inlets/docs/)
 
 ### Featured on
 
