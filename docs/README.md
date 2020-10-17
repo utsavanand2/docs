@@ -48,7 +48,7 @@ The remote server is called an "exit-node" or "exit-server" because that is wher
 
 An exit-server is a host that runs the `inlets server` or `inlets-pro server` command to expose its control-plane (websocket) to inlets clients. The inlets client can then connect to the exit-server and make services within its local network available through the exit-server.
 
-Services are tunnelled through the exit-server, however unlike SaaS suchs such as Ngrok and Argo Tunnels, they do not need to be exposed on the public Internet. Exit-servers can also be run within Kubernetes Pods, and users who need to support many clients can use solutions like [inlets-cloud](https://inlets.dev/blog/2020/10/08/advanced-cloud-patterns.html).
+Services are tunnelled through the exit-server, however unlike SaaS products such as Ngrok and Argo Tunnels, they do not need to be exposed on the public Internet. Exit-servers can also be run within Kubernetes Pods, and users who need to support many clients can use solutions like [inlets-cloud](https://inlets.dev/blog/2020/10/08/advanced-cloud-patterns.html).
 
 Exit servers can be set up manually, or you can use tooling like [Terraform](https://www.terraform.io), bash, cloud-init or additional inlets community projects:
 
