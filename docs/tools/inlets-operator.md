@@ -4,7 +4,7 @@ inlets-operator adds public LoadBalancers to your local Kubernetes clusters.
 
 Install the inlets-operator using a single command with [arkade](https://get-arkade.dev/). arkade runs against any Kubernetes cluster and wraps the helm command-line.
 
-Install using arkade:
+## Install using arkade
 
 ```bash
 arkade install inlets-operator \
@@ -15,7 +15,7 @@ arkade install inlets-operator \
  --license $LICESNE # inlets-pro license file. (Omit if using inlets OSS)
  ```
 
-Install using helm:
+## Install using helm
 
 Checkout the inlets-operator helm chart [README](https://github.com/inlets/inlets-operator/blob/master/chart/inlets-operator/README.md) to know more about the values that can be passed to `--set` and to see provider specific example commands.
 
@@ -36,7 +36,8 @@ helm upgrade inlets-operator --install inlets/inlets-operator \
 
 View the code on GitHub: [inlets/inlets-operator](https://github.com/inlets/inlets-operator)
 
-## Create exit node on DigitalOcean
+## Instructions per cloud
+### Create exit node on DigitalOcean
 
 Install with inlets PRO:
 
@@ -57,7 +58,7 @@ arkade install inlets-operator \
  --token-file $HOME/Downloads/do-access-token
 ```
 
-## Create exit node on EC2
+### Create exit node on EC2
 
 To use the instructions below you must have the AWS CLI configured with sufficient permissions to create users and roles.
 
@@ -144,7 +145,7 @@ arkade install inlets-operator \
  --secret-key-file $HOME/Downloads/secret-access-key \
 ```
 
-## Create exit node on Google Compute Engine
+### Create exit node on Google Compute Engine
 
 If you do not have arkade installed, get it from [here](https://get-arkade.dev/)
 
@@ -200,7 +201,7 @@ arkade install inlets-operator \
     --token-file key.json
 ```
 
-## Create exit node on Linode
+### Create exit node on Linode
 
 Install using helm:
 
@@ -241,7 +242,7 @@ arkade install inlets-operator \
  --access-key <Linode API Access Key>
 ```
 
-## Create exit node on Azure
+### Create exit node on Azure
 Prerequisites:
 
 * You will need `az`. See [Install the Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
