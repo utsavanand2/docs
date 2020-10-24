@@ -6,7 +6,7 @@ This documentation site covers all the inlets projects and uses [docsify](https:
 
 * [Install Node.js](https://nodejs.org/en/)
 
-* Install docsify:
+* Install docsify using the `docsify-cli` npm module:
 
 ```bash
 npm i -g docsify-cli
