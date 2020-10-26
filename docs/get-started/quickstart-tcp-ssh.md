@@ -124,9 +124,9 @@ ssh -p 22 $IP "uptime"
 ssh -p 2222 $IP "uptime"
 ```
 
-### Start the inlets-pro client
+### Start the inlets PRO client
 
-First download the inlets-pro client onto the machine running ssh
+First download the inlets-pro client onto the machine running ssh:
 
 ```bash
 sudo inletsctl download --pro
@@ -135,15 +135,16 @@ sudo inletsctl download --pro
 Use the command from earlier to start the client on the server:
 
 ```bash 
+export IP="206.189.114.179"
 export TCP_PORTS="2222"
 export LICENSE="$(cat ~/LICENSE.txt)"
 export UPSTREAM="localhost"
 
-inlets-pro client --url "wss://206.189.114.179:8123/connect" \
+inlets-pro client --url "wss://$IP:8123/connect" \
       --token "4NXIRZeqsiYdbZPuFeVYLLlYTpzY7ilqSdqhA0HjDld1QjG8wgfKk04JwX4i6c6F" \
       --license "$LICENSE" \
       --upstream "$UPSTREAM" \
-      --tcp-ports $TCP_PORTS
+      --ports $TCP_PORTS
 ```
 
 You can alter UPSTREAM to point to another machine accessible from where you are running the inlets-pro client such as 192.168.0.10.
@@ -164,4 +165,3 @@ You can also use other compatible tools like `sftp`, `scp` and `rsync`, just mak
 
 The principles in this tutorial can be adapted for other protocols that run over TCP such as MongoDB or PostgreSQL, just adapt the port number as required.
 
-> This content was adapted from [inlets-pro documentation](https://github.com/inlets/inlets-pro/blob/master/docs/ssh-tutorial.md)
