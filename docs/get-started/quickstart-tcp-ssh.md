@@ -8,16 +8,19 @@ Scenario: You want to allow SSH access to a computer that doesn't have a public 
 
 ## Setup your exit node with `inletsctl`
 
-You will need to have an account and API key with one of the [supported providers](https://github.com/inlets/inletsctl#featuresbacklog). For the tutorial DigitalOcean will be used.
+For this tutorial you will need to have an account and API key with one of the [supported providers](https://github.com/inlets/inletsctl#featuresbacklog), or you can create an exit-server manually and install inlets PRO there yourself.
 
-So download your access key to a file called `do-access-token` and put it in your home directory.
+For this tutorial, the [DigitalOcean provider will be used](https://m.do.co/c/8d4e75e9886f). You can get [free credits on DigitalOcean with this link](https://m.do.co/c/8d4e75e9886f).
 
-You need to know the IP of the machine you want to SSH onto, in my case this was `192.168.0.35`
+Create an API key in the DigitalOcean dashboard with Read and Write permissions, and download it to a file called `do-access-token` in your home directory.
 
-On each of the computers you work with in this tutorial, you can use `inletsctl` to download `inlets-pro`.
+You need to know the IP of the machine you to connect to on your local network, for instance `192.168.0.35` or `127.0.0.1` if you are running inlets PRO on the same host as SSH.
+
+You can use the `inletsctl` utility to provision exit-servers with inlets PRO preinstalled, it can also download the `inlets-pro` CLI.
 
 ```bash
-curl -sLSf https://inletsctl.inlets.dev | sudo sh
+curl -sLSf https://inletsctl.inlets.dev | sh
+sudo mv inletsctl /usr/local/bin/
 sudo inletsctl download --pro
 ```
 
@@ -28,8 +31,11 @@ sudo inletsctl download --pro
 ```bash
 inletsctl create \
   --access-token-file ~/do-access-token \
+  --region lon1 \
   --pro
 ```
+
+> Pick a region close to your network, you can see other options with `--help`
 
 After the machine has been created, `inletsctl` will output a sample command for the `inlets-pro client` command:
 
@@ -47,7 +53,8 @@ Use B) if you want to provision your virtual machine manually, or if you already
 Log in to your remote exit node with `ssh` and obtain the binary using `inletsctl`:
 
 ```bash
-curl -sLSf https://inletsctl.inlets.dev | sudo sh
+curl -sLSf https://inletsctl.inlets.dev | sh
+sudo mv inletsctl /usr/local/bin/
 sudo inletsctl download --pro
 ```
 
@@ -77,6 +84,8 @@ sudo inlets-pro server \
 ```
 
 If running the inlets client on the same host as SSH, you can simply set `PROXY_TO_HERE` to `localhost`. Or if you are running SSH on a different computer to the inlets client, then you can specify a DNS entry or an IP address like `192.168.0.15`.
+
+If using this manual approach to install inlets PRO, you should create a systemd unit file.
 
 ### Configure the internal SSH server's listening port
 
