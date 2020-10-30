@@ -39,15 +39,15 @@ Note that `UPSTREAM="localhost"` can be changed to point at a host or IP address
 ```bash
 export EXIT_IP="134.209.21.155"
 export TCP_PORTS="5432"
-export LICENSE=$(cat inlets.jwt)
+export LICENSE_FILE="$HOME/LICENSE.txt"
 export TOKEN="KXJ5Iq1Z5Cc8GjFXdXJrqNhUzoScXnZXOSRKeh8x3f6tdGq1ijdENWQ2IfzdCg4U"
 export UPSTREAM="localhost"
 
 inlets-pro client --connect "wss://$EXIT_IP:8123/connect" \
   --token "$TOKEN" \
-  --license "$LICENSE" \
-  --ports $TCP_PORTS \
-  --upstream $UPSTREAM
+  --license-file "$LICENSE_FILE" \
+  --upstream $UPSTREAM \
+  --ports $TCP_PORTS
 ```
 
 ## Connect to your private Postgresql server from the Internet

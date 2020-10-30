@@ -72,14 +72,14 @@ Save an access token for your cloud provider as `$HOME/access-token`, in this ex
 Make sure you set `LICENSE` with the value of your license.
 
 ```bash
-export LICENSE="INLETS_PRO_LICENSE_JWT"
 export ACCESS_TOKEN=$HOME/access-token
+export LICENSE_FILE="$HOME/LICENSE.txt"
 
 arkade install inlets-operator \
  --provider digitalocean \
  --region lon1 \
  --token-file $ACCESS_TOKEN \
- --license $LICENSE
+ --license-file "$LICENSE_FILE"
 ```
 
 > You can run `arkade install inlets-operator --help` to see a list of other cloud providers.

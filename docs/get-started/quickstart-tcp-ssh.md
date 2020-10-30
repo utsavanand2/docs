@@ -137,14 +137,14 @@ Use the command from earlier to start the client on the server:
 ```bash 
 export IP="206.189.114.179"
 export TCP_PORTS="2222"
-export LICENSE="$(cat ~/LICENSE.txt)"
+export LICENSE_FILE="$HOME/LICENSE.txt"
 export UPSTREAM="localhost"
 
 inlets-pro client --url "wss://$IP:8123/connect" \
-      --token "4NXIRZeqsiYdbZPuFeVYLLlYTpzY7ilqSdqhA0HjDld1QjG8wgfKk04JwX4i6c6F" \
-      --license "$LICENSE" \
-      --upstream "$UPSTREAM" \
-      --ports $TCP_PORTS
+  --token "4NXIRZeqsiYdbZPuFeVYLLlYTpzY7ilqSdqhA0HjDld1QjG8wgfKk04JwX4i6c6F" \
+  --license-file "$LICENSE_FILE" \
+  --upstream "$UPSTREAM" \
+  --ports $TCP_PORTS
 ```
 
 You can alter UPSTREAM to point to another machine accessible from where you are running the inlets-pro client such as 192.168.0.10.

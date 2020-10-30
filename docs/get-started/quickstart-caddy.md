@@ -103,14 +103,14 @@ Run the inlets-pro client, using the TOKEN and IP given to you from the previous
 ```sh
 export IP=""        # take this from the exit-server
 export TOKEN=""     # take this from the exit-server
-export LICENSE="$(cat ~/LICENSE)"   # your license
+export LICENSE_FILE="$HOME/LICENSE.txt"
 
 inlets-pro client \
   --url wss://$IP:8123/connect \
   --ports 80,443 \
   --token $TOKEN \
   --upstream localhost \
-  --license $LICENSE
+  --license-file $LICENSE_FILE
 ```
 
 Note that `--upstream localhost` will connect to Caddy running on your computer, if you are running Caddy on another machine, use its IP address here.
