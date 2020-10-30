@@ -13,18 +13,25 @@ If you don't have a license for inlets PRO, then your IngressController will onl
 * [KinD](https://github.com/kubernetes-sigs/kind) - the "darling" of the Kubernetes community is Kubernetes IN Docker, a small one-shot cluster that can run inside a Docker container
 * [arkade](https://github.com/alexellis/arkade) - arkade is an app installer that takes a helm chart and bundles it behind a simple CLI
 
-## Create the Kubernetes cluster with KinD
+## Install arkade
+
+You can use [arkade](https://get-arkade.dev) or helm to install the various applications we are going to add to the cluster below. arkade provides an apps ecosystem that makes things much quicker.
+
+```bash
+curl -sSLf https://dl.get-arkade.dev/ | sudo sh
+```
+
+## Create a Kubernetes cluster with KinD
 
 We're going to use [KinD](https://github.com/kubernetes-sigs/kind), which runs inside a container with Docker for Mac or the Docker daemon. MacOS cannot actually run containers or Kubernetes itself, so projects like Docker for Mac create a small Linux VM and hide it away.
 
 You can use an alternative to KinD if you have a preferred tool.
 
-Get a KinD binary release:
+Get a KinD binary release and `kubectl` (the Kubernetes CLI):
 
 ```bash
-curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.8.1/kind-$(uname)-amd64
-chmod +x ./kind
-sudo mv ./kind /usr/local/bin
+arkade get kind --version v0.9.0
+arkade get kubectl --version v1.19.3
 ```
 
 Now create a cluster:
@@ -32,7 +39,7 @@ Now create a cluster:
 ```bash
  kind create cluster
 Creating cluster "kind" ...
- ✓ Ensuring node image (kindest/node:v1.18.0) 🖼
+ ✓ Ensuring node image (kindest/node:v1.19.0) 🖼
  ✓ Preparing nodes 📦  
  ✓ Writing configuration 📜 
  ✓ Starting control-plane 🕹️ 
@@ -56,14 +63,6 @@ kind-control-plane      Ready   master   35s   v1.18.0   172.17.0.2    <none>   
 ```
 
 The above shows one node Ready, so we are ready to move on.
-
-## Install arkade
-
-You can use [arkade](https://get-arkade.dev) or helm to install the various applications we are going to add to the cluster below. arkade provides an apps ecosystem that makes things much quicker.
-
-```bash
-curl -sSLf https://dl.get-arkade.dev/ | sudo sh
-```
 
 ## Install the inlets-operator
 
@@ -135,24 +134,33 @@ Now create a DNS A record in your admin panel, so for example: `expressjs.exampl
 
 Now when you install a Kubernetes application with an Ingress definition, NginxIngress and cert-manager will work together to provide a TLS certificate.
 
-Create a staging issuer for cert-manager `issuer.yaml`:
+Create a staging issuer for cert-manager `staging-issuer.yaml` and make sure you edit the `email` value.
 
-```yaml
-apiVersion: cert-manager.io/v1alpha2
+
+```bash
+export EMAIL="you@example.com"
+
+cat > issuer-staging.yaml <<EOF
+apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
   name: letsencrypt-staging
+  namespace: default
 spec:
   acme:
     server: https://acme-staging-v02.api.letsencrypt.org/directory
-    email: you@example.com
+    email: $EMAIL
     privateKeySecretRef:
       name: letsencrypt-staging
     solvers:
-    - http01:
+    - selector: {}
+      http01:
         ingress:
-          class:  nginx
+          class: nginx
+EOF
 ```
+
+Apply the file with `kubectl apply -f staging-issuer.yaml`
 
 While the Let's Encrypt production server has strict limits on the API, the staging server is more forgiving, and
 should be used while you are testing a deployment.
@@ -224,26 +232,30 @@ from your browser. You can accept the certificate in order to test your site.
 Create a production certificate issuer `issuer-prod.yaml`, similar to the staging issuer you produced
 earlier. Be sure to change the email address to your email.
 
-```yaml
+```bash
+export EMAIL="you@example.com"
+
 cat > issuer-prod.yaml <<EOF
-apiVersion: cert-manager.io/v1alpha2
+apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
   name: letsencrypt-prod
+  namespace: default
 spec:
   acme:
     server: https://acme-v02.api.letsencrypt.org/directory
-    email: you@example.com
+    email: $EMAIL
     privateKeySecretRef:
       name: letsencrypt-prod
     solvers:
-    - http01:
+    - selector: {}
+      http01:
         ingress:
           class: nginx
 EOF
 ```
 
-After editing the email, run `kubectl apply -f issuer-prod.yaml`.
+Then run `kubectl apply -f issuer-prod.yaml`
 
 Now you must update your `expressjs` deployment to use the new certificate issuer. Create a new
 helm3 overrides file `custom-prod.yaml`:
