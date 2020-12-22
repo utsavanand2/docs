@@ -1,4 +1,4 @@
-# Quick-start: expose a local website with HTTPS using Caddy
+# Quick-start: expose a local websites with HTTPS using Caddy
 
 In this quickstart, you'll run Caddy on your local machine and obtain TLS certificates from LetsEncrypt. These will be served from your computer, as if it had a real, public IP. Caddy is a free and open-source reverse proxy. It's often used on web-servers to add TLS to one or more virtual websites.
 
@@ -27,7 +27,7 @@ Note the `--url` and `TOKEN` given to you in this step.
 
 Setup a DNS A record for the site you want to expose using the public IP of the cloud VM
 
-* `178.128.40.109` = `share.example.com`
+* `178.128.40.109` = `service.example.com`
 
 ## Run a local server to share files
 
@@ -68,12 +68,12 @@ sudo cp /tmp/caddy/caddy /usr/local/bin/
 
 The `Caddyfile` configures which websites Caddy will expose, and which sites need a TLS certificate.
 
-Replace `share.example.com` with your own domain.
+Replace `service.example.com` with your own domain.
 
 Next, edit `proxy / 127.0.0.1:8000` and change the port `8000` to the port of your local webserver, for instance `3000` or `8080`. For our example, keep it as `8000`.
 
 ```sh
-share.example.com
+service.example.com
 
 proxy / 127.0.0.1:8000 {
   transparent
@@ -119,6 +119,45 @@ Note that `--upstream localhost` will connect to Caddy running on your computer,
 
 You'll see that Caddy can now obtain a TLS certificate.
 
-Go ahead and visit: `https://share.example.com`
+Go ahead and visit: `https://service.example.com`
 
 Congratulations, you've now served a TLS certificate directly from your laptop. You can close caddy and open it again at a later date. Caddy will re-use the certificate it already obtained and it will be valid for 3 months. To renew, just keep Caddy running or open it again whenever you need it.
+
+## Setup Caddy 2.x
+
+For Caddy 2.x, the Caddyfile format changes.
+
+Let's say you're running a Node.js service on port 3000, and want to expose it with TLS on the domain "service.example.com":
+
+```
+git clone https://github.com/alexellis/expressjs-k8s/
+cd expressjs-k8s
+
+npm install
+http_port=3000 npm start
+```
+
+The local site will be served at http://127.0.0.1:3000
+
+```Caddyfile
+{
+  acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
+}
+
+service.example.com
+
+reverse_proxy / 127.0.0.1:3000 {
+}
+```
+
+Note the `acme_ca` being used will receive a staging certificate, remove it to obtain a production TLS certificate.
+
+Now [download Caddy 2.x](https://caddyserver.com/download) for your operating system.
+
+```bash
+sudo ./caddy run \
+  -config ./Caddyfile
+```
+
+`sudo` - is required to bind to port 80 and 443, although you can potentially update your OS to allow binding to low ports without root access.
+
