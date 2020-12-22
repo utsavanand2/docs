@@ -146,7 +146,7 @@ The local site will be served at http://127.0.0.1:3000
 
 service.example.com
 
-reverse_proxy / 127.0.0.1:3000 {
+reverse_proxy 127.0.0.1:3000 {
 }
 ```
 
