@@ -67,4 +67,4 @@ If you would like to add TLS encryption to the tunnel then you can do this manua
 
 Add TLS manually: [HTTPS for your local endpoints with inlets and Caddy](https://blog.alexellis.io/https-inlets-local-endpoints/)
 
-The easier alternative is to use [inlets-pro](https://github.com/inlets/inlets-pro) which has built-in TLS and can allow your computer to obtain a TLS certificate using a reverse proxy like Caddy, Nginx (with cert-bot) or Traefik.
+The easier alternative is to use [inlets PRO](https://inlets.dev) which has built-in TLS and can allow your computer to obtain a TLS certificate using a reverse proxy like Caddy, Nginx (with cert-bot) or Traefik.
