@@ -12,8 +12,10 @@ arkade install inlets-operator \
  --region $REGION \ # Used with cloud providers that require a region.
  --zone $ZONE \ # Used with cloud providers that require zone (e.g. gce).
  --token-file $HOME/Downloads/key.json \ # Token file/Service Account Key file with the access to the cloud provider.
- --license $LICESNE # inlets-pro license file. (Omit if using inlets OSS)
+ --license $LICESNE # inlets-pro license file. (required)
  ```
+ 
+ You can get a free trial, or a personal or business license on the [inlets webpage](https://inlets.dev/)
 
 ## Install using helm
 
@@ -37,6 +39,7 @@ helm upgrade inlets-operator --install inlets/inlets-operator \
 View the code on GitHub: [inlets/inlets-operator](https://github.com/inlets/inlets-operator)
 
 ## Instructions per cloud
+
 ### Create exit node on DigitalOcean
 
 Install with inlets PRO:
@@ -47,15 +50,6 @@ arkade install inlets-operator \
  --region lon1 \
  --token-file $HOME/Downloads/do-access-token \
  --license $(cat $HOME/inlets-pro-license.txt)
-```
-
-Install with inlets OSS:
-
-```bash
-arkade install inlets-operator \
- --provider digitalocean \
- --region lon1 \
- --token-file $HOME/Downloads/do-access-token
 ```
 
 ### Create exit node on EC2
@@ -95,7 +89,6 @@ Create the policy in AWS
 aws iam create-policy --policy-name inlets-automation --policy-document file://policy.json
 ```
 
-
 * Create an IAM user
 
 ```bash 
@@ -133,16 +126,6 @@ arkade install inlets-operator \
  --token-file $HOME/Downloads/access-key \
  --secret-key-file $HOME/Downloads/secret-access-key \
  --license $(cat $HOME/inlets-pro-license.txt)
-```
-
-Install with inlets OSS:
-
-```bash
-arkade install inlets-operator \
- --provider ec2 \
- --region eu-west-1 \
- --token-file $HOME/Downloads/access-key \
- --secret-key-file $HOME/Downloads/secret-access-key \
 ```
 
 ### Create exit node on Google Compute Engine
@@ -191,16 +174,6 @@ arkade install inlets-operator \
     --license $(cat $HOME/inlets-pro-license.txt)
 ```
 
-Install with inlets OSS:
-
-```bash
-arkade install inlets-operator \
-    --provider gce \
-    --project-id $PROJECTID \
-    --zone us-central1-a \
-    --token-file key.json
-```
-
 ### Create exit node on Linode
 
 Install using helm:
@@ -233,16 +206,8 @@ arkade install inlets-operator \
  --license $(cat $HOME/inlets-pro-license.txt)
 ```
 
-Install with inlets OSS:
-
-```bash
-arkade install inlets-operator \
- --provider linode \
- --region us-east \
- --access-key <Linode API Access Key>
-```
-
 ### Create exit node on Azure
+
 Prerequisites:
 
 * You will need `az`. See [Install the Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
