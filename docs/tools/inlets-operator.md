@@ -12,10 +12,10 @@ arkade install inlets-operator \
  --region $REGION \ # Used with cloud providers that require a region.
  --zone $ZONE \ # Used with cloud providers that require zone (e.g. gce).
  --token-file $HOME/Downloads/key.json \ # Token file/Service Account Key file with the access to the cloud provider.
- --license $LICESNE # inlets-pro license file. (required)
- ```
- 
- You can get a free trial, or a personal or business license on the [inlets webpage](https://inlets.dev/)
+ --license-file inlets-pro-license.txt # inlets-pro license file. (required)
+```
+
+You can get a free trial, or a personal or business license on the [inlets webpage](https://inlets.dev/)
 
 ## Install using helm
 
@@ -56,62 +56,62 @@ arkade install inlets-operator \
 
 To use the instructions below you must have the AWS CLI configured with sufficient permissions to create users and roles.
 
-* Create a AWS IAM Policy with the following:
+- Create a AWS IAM Policy with the following:
 
 Create a file named `policy.json` with the following content
 
-```json 
+```json
 {
-    "Version": "2012-10-17",
-    "Statement": [  
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:AuthorizeSecurityGroupIngress",
-                "ec2:DescribeInstances",
-                "ec2:DescribeImages",
-                "ec2:TerminateInstances",
-                "ec2:CreateSecurityGroup",
-                "ec2:CreateTags",
-                "ec2:DeleteSecurityGroup",
-                "ec2:RunInstances",
-                "ec2:DescribeInstanceStatus"
-            ],
-            "Resource": ["*"]
-        }
-    ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:DescribeInstances",
+        "ec2:DescribeImages",
+        "ec2:TerminateInstances",
+        "ec2:CreateSecurityGroup",
+        "ec2:CreateTags",
+        "ec2:DeleteSecurityGroup",
+        "ec2:RunInstances",
+        "ec2:DescribeInstanceStatus"
+      ],
+      "Resource": ["*"]
+    }
+  ]
 }
 ```
 
-Create the policy in AWS 
+Create the policy in AWS
 
-```bash 
+```bash
 aws iam create-policy --policy-name inlets-automation --policy-document file://policy.json
 ```
 
-* Create an IAM user
+- Create an IAM user
 
-```bash 
+```bash
 aws iam create-user --user-name inlets-automation
 ```
 
-* Add the Policy to the IAM user
+- Add the Policy to the IAM user
 
 We need to use the policy arn generated above, it should have been printed to the console on success. It also follows the format below.
 
-```bash 
+```bash
 export AWS_ACCOUNT_NUMBER="Your AWS Account Number"
 aws iam attach-user-policy --user-name inlets-automation --policy-arn arn:aws:iam::${AWS_ACCOUNT_NUMBER}:policy/inlets-automation
 ```
 
-* Generate an access key for your IAM User 
+- Generate an access key for your IAM User
 
 The below commands will create a set of credentials and save them into files for use later on.
 
 > we are using [jq](https://stedolan.github.io/jq/) here. It can be installed using the link provided.
 > Alternatively you can print ACCESS_KEY_JSON and create the files manually.
 
-```bash 
+```bash
 ACCESS_KEY_JSON=$(aws iam create-access-key --user-name inlets-automation)
 echo $ACCESS_KEY_JSON | jq -r .AccessKey.AccessKeyId > access-key
 echo $ACCESS_KEY_JSON | jq -r .AccessKey.SecretAccessKey > secret-access-key
@@ -191,7 +191,7 @@ helm repo update
 
 # Install inlets-operator with the required fields
 helm upgrade inlets-operator --install inlets/inlets-operator \
-  --set provider=linode,region=us-east
+  --set provider=linode,region=us-east,inletsProLicense=$LICENSE
 ```
 
 You can also install the inlets-operator using a single command using [arkade](https://get-arkade.dev/), arkade runs against any Kubernetes cluster.
@@ -210,19 +210,21 @@ arkade install inlets-operator \
 
 Prerequisites:
 
-* You will need `az`. See [Install the Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
+- You will need `az`. See [Install the Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
 
-Generate Azure auth file 
+Generate Azure auth file
+
 ```sh
 az ad sp create-for-rbac --sdk-auth > ~/Downloads/client_credentials.json
 ```
 
 Install using helm:
+
 ```bash
 kubectl apply -f ./artifacts/crds/
 kubectl create secret generic inlets-access-key --from-file=inlets-access-key=~/Downloads/client_credentials.json
 helm repo add inlets https://inlets.github.io/inlets-operator/
 helm repo update
 helm upgrade inlets-operator --install inlets/inlets-operator \
-  --set provider=azure,region=eastus,subscriptionID=<Azure Subscription ID> 
+  --set provider=azure,region=eastus,subscriptionID=<Azure Subscription ID>,inletsProLicense=$LICENSE
 ```
